@@ -1,0 +1,55 @@
+#background{
+    width:980px;
+    margin:0 auto;
+    padding:20px 0;
+}
+#background ul{
+    width:306px;
+    height:306px;
+    margin:0 auto;
+    border-left:1px solid #eee;
+    border-top:1px solid #eee;
+}
+#background ul li{
+    float:left;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    font-weight:bold;
+    cursor:pointer;
+    border-right:1px solid #eee;
+    border-bottom:1px solid #eee;
+
+}
+#background ul li:hover{
+    background:rgba(255,255,100, 0.5);
+}
+#background ul li.actived, #background ul li.actived:hover{
+    
+}
+#background ul li.select, #background ul li.select:hover{
+    background:rgba(255,255,100, 1);
+}
+#background .btns{
+    padding:10px;
+    text-align:center;
+}
+#background .btns .create{
+    padding:4px 8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+#background .btns .reset{
+    padding:4px 8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+.data-container{
+    text-align:center;
+}
+.data-container textarea{
+    margin:0 auto;
+    width:300px;
+    height:200px;
+}

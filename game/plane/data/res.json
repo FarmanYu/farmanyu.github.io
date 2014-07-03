@@ -1,0 +1,31 @@
+{
+  "image":
+	[		  
+	   {"name":"bg1","src":"imgs/bg1.jpg"},
+       {"name":"player","src":"imgs/player.png"},
+	   {"name":"em0","src":"imgs/em0.png"},
+	   {"name":"em1","src":"imgs/em1.png"},
+	   {"name":"em2","src":"imgs/em2.png"},
+	   {"name":"boom0","src":"imgs/boom0.png"},
+	   {"name":"boss0","src":"imgs/boss0.png"},
+	   {"name":"b0","src":"imgs/b0.png"},
+	   {"name":"b1","src":"imgs/b1.png"},
+	   {"name":"b2","src":"imgs/b2.png"},
+	   {"name":"b3","src":"imgs/b3.png"},
+	   {"name":"b4","src":"imgs/b4.png"},
+	   {"name":"b5","src":"imgs/b5.png"},
+       {"name":"b6","src":"imgs/b6.png"},
+	   {"name":"lb0","src":"imgs/lb0.png"},
+       {"name":"tb0","src":"imgs/tb0.png"},
+	   {"name":"shield","src":"imgs/shield.png"},
+	   {"name":"rw0","src":"imgs/rw0.png"}	   
+	], 
+  "frame":         
+	[
+	  {"name":"sprite","src":"data/sprite_frames.json"}
+	],
+  "gCfg":
+    [
+	  {"name":"gf0","src":"data/gamecfg.json"}
+	] 
+}

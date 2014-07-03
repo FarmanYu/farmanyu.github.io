@@ -1,0 +1,279 @@
+<!DOCUTYPE>
+<html>    
+<head>    
+<title>在地图上找到你要找的点</title>   
+<link href="dist/css/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8afe6e3eaca6137c9a23c84c90d97db8"></script>
+<script type="text/javascript" src="dist/js/jquery.js"></script>
+<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+<style type="text/css">
+.content{
+    padding:10px 30px;
+}
+.mt{
+    margin-top:8px;
+}
+#mapContainer{
+    width:100%;
+    height:400px;
+}
+</style>
+</head>
+<body>    
+<div class="content">
+    <div id="mapContainer" class="mt"></div>
+    <h3>在地图找到哪些地址</h3><span>(如果没有输入城市名，默认将在上海搜)</span>
+    <textarea id="J_adress-here" class="form-control" rows="5"></textarea>
+    
+    <button type="button" class="btn btn-primary mt" id="J_find-address">找到他们</button>
+</div>
+<script type="text/javascript">
+var map = new BMap.Map("mapContainer");             // 创建Map实例
+map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);     // 初始化地图,设置中心点坐标和地图级别
+map.addControl(new BMap.NavigationControl());               // 添加平移缩放控件
+map.addControl(new BMap.ScaleControl());                    // 添加比例尺控件
+map.addControl(new BMap.OverviewMapControl());              //添加缩略地图控件
+map.enableScrollWheelZoom();                            //启用滚轮放大缩小
+map.addControl(new BMap.MapTypeControl());          //添加地图类型控件
+map.setCenter("上海");   //设置地图中心点。center除了可以为坐标点以外，还支持城市名
+map.setZoom(10);       //将视图切换到指定的缩放等级，中心点坐标不变    
+
+// 将地址解析结果显示在地图上,并调整地图视野
+/*
+重庆
+北京
+上海
+天津
+省
+
+浙江省
+副省级城市：杭州、宁波 。
+地级市：湖州、嘉兴、舟山、绍兴、衢州、金华、台州、温州、丽水。
+县级市：临安、富阳、建德、慈溪、余姚、奉化、平湖、海宁、桐乡、诸暨、上虞、嵊州、江山、兰溪、永康、义乌、东阳、临海、温岭、瑞安、乐清、龙泉。
+
+广东省
+副省级城市： 广州、深圳。
+
+地级市：清远、韶关、河源、梅州、潮州、汕头、揭阳、汕尾、惠州、东莞、珠海、中山、江门、佛山、肇庆、云浮、阳江、茂名、湛江。
+
+县级市：从化、增城、英德、连州、乐昌、南雄、兴宁、普宁、陆丰、恩平、台山、开平、鹤山、高要、四会、罗定、阳春、化州、信宜、高州、吴川、廉江、雷州。
+
+江苏省
+副省级城市：南京。
+
+地级市：徐州、连云港、宿迁、淮安、盐城、扬州、泰州、南通、镇江、常州、无锡、苏州。
+
+县级市：江阴、宜兴、邳州、新沂、金坛、溧阳、常熟、张家港、太仓、昆山、吴江、如皋、通州、海门、启东、大丰、东台、高邮、仪征、江都、扬中、句容、丹阳、兴化、姜堰、泰兴、靖江。
+
+四川省
+副省级城市： 成都 。
+
+地级市：广元、绵阳、德阳、南充、广安、遂宁、内江、乐山、自贡、泸州、宜宾、攀枝花、巴中、达州、资阳、眉山、雅安 。
+
+县级市：崇州、邛崃、都江堰、彭州、江油、什邡、广汉、绵竹、阆中、华蓥、峨眉山、万源、简阳、西昌
+
+云南省
+地级市：昆明、曲靖、玉溪、丽江、昭通、思茅、临沧、保山。
+
+县级市：安宁、宣威、潞西、瑞丽、大理、楚雄、个旧、开远、景洪。
+
+安徽省
+地级市：合肥、宿州、淮北、阜阳、蚌埠、淮南、滁州、马鞍山、芜湖、铜陵、安庆、黄山、六安、巢湖、池州、宣城、亳州。
+
+县级市：界首、明光、天长、桐城、宁国。
+福建省
+副省级城市：厦门。
+
+地级市：福州、南平、三明、莆田、泉州、漳州、龙岩、宁德。
+
+县级市：福清、长乐、邵武、武夷山、建瓯、建阳、永安、石狮、晋江、南安、龙海、漳平、福安、福鼎。
+
+
+河北省
+地级市：石家庄、邯郸、唐山、保定、秦皇岛、邢台、张家口、承德、沧州、廊坊、衡水 。
+
+县级市：辛集、藁城、晋州、新乐、鹿泉、丰南、遵化、迁安、霸州、三河、定州、涿州、安国、高碑店、泊头、任丘、黄骅、河间、冀州、深州、南宫、沙河、武安。
+
+黑龙江省
+副省级城市：哈尔滨
+地级市：齐齐哈尔、黑河、大庆、伊春、鹤岗、佳木斯、双鸭山、七台河、鸡西、牡丹江、绥化。
+县级市：双城、尚志、五常、阿城、讷河、北安、五大连池、铁力、同江、富锦、虎林、密山、绥芬河、海林、宁安、安达、肇东、海伦。
+
+河南省
+地级市：郑州、开封、洛阳、平顶山、安阳、鹤壁、新乡、焦作、濮阳、许昌、漯河、三门峡、南阳、商丘、周口、驻马店、信阳。
+
+省直辖县级市：济源。
+
+县级市：荥阳、新郑、登封、新密、巩义、邓州、偃师、孟州、沁阳、卫辉、辉县、林州、永城、禹州、长葛、舞钢、汝州、义马、灵宝、项城。
+
+湖北省
+副省级城市：武汉。
+
+地级市：十堰、襄樊、荆门、孝感、黄冈、鄂州、黄石、咸宁、荆州、宜昌、随州。
+
+省直辖县级市：仙桃、天门、潜江。
+
+县级市：丹江口、老河口、枣阳、宜城、钟祥、汉川、应城、安陆、广水、麻城、武穴、大冶、赤壁、石首、洪湖、松滋、宜都、枝江、当阳、恩施、利川。
+
+湖南省
+地级市：长沙、张家界、常德、益阳、岳阳、株洲、湘潭、衡阳、郴州、永州、邵阳、怀化、娄底。
+
+县级市：浏阳、津市、沅江、汨罗、临湘、醴陵、湘乡、韶山、耒阳、常宁、资兴、武冈、洪江、冷水江、涟源、吉首。
+
+吉林省
+副省级城市：长春。
+
+地级市：吉林市、白城、松原、四平、辽源、通化、白山。
+
+县级市：德惠、九台、榆树、磐石、蛟河、桦甸、舒兰、洮南、大安、双辽、公主岭、梅河口、集安、临江、延吉、图们、敦化、珲春、龙井、和龙。
+
+江西省
+地级市：南昌、九江、景德镇、鹰潭、新余、萍乡、赣州、上饶、抚州、宜春、吉安。
+
+县级市：瑞昌、乐平、瑞金、南康、德兴、丰城、樟树、高安、井冈山、贵溪。
+
+辽宁省
+副省级城市：沈阳、大连。
+
+地级市：朝阳、阜新、铁岭、抚顺、本溪、辽阳、鞍山、丹东、营口、盘锦、锦州、葫芦岛。
+
+县级市：新民、瓦房店、普兰店、庄河、北票、凌源、调兵山、开原、灯塔、海城、凤城、东港、大石桥、盖州、凌海、北宁、兴城。
+
+山东省
+副省级城市： 济南、青岛。
+
+地级市：聊城、德州、东营、淄博、潍坊、烟台、威海、日照、临沂、枣庄、济宁、泰安、莱芜、滨州、菏泽。
+
+县级市：章丘、胶州、胶南、即墨、平度、莱西、临清、乐陵、禹城、安丘、昌邑、高密、青州、诸城、寿光、栖霞、海阳、龙口、莱阳、莱州、蓬莱、招远、文登、荣成、乳山、滕州、曲阜、兖州、邹城、新泰、肥城。
+
+陕西省
+副省级城市：西安。
+
+地级市：延安、铜川、渭南、咸阳、宝鸡、汉中、榆林、商洛、安康。
+
+县级市：韩城、华阴、兴平。
+
+山西省
+地级市：太原、大同、朔州、阳泉、长治、晋城、忻州、吕梁、晋中、临汾、运城。
+县级市：古交、潞城、高平、原平、孝义、汾阳、介休、侯马、霍州、永济、河津
+
+甘肃省
+地级市：兰州、嘉峪关、金昌、白银、天水、酒泉、张掖、武威、庆阳、平凉、定西、陇南。
+
+县级市：玉门、敦煌、临夏、合作。
+
+贵州省
+地级市：贵阳、六盘水、遵义、安顺
+
+县级市：清镇、赤水、仁怀、凯里、都匀、兴义、毕节、铜仁、福泉
+
+青海省
+地级市：西宁。
+县级市：格尔木、德令哈。
+自治区
+广西壮族自治区
+地级市：南宁、桂林、柳州、梧州、贵港、玉林、钦州、北海、防城港、崇左、百色、河池、来宾、贺州。
+县级市：岑溪、桂平、北流、东兴、凭祥、宜州、合山。
+内蒙古自治区
+地级市：呼和浩特、包头
+*/
+var render = function(points, info){
+    var infoWindows = [];
+    for (var i = 0; i < points.length; i++) {
+        var marker = new BMap.Marker( points[i] );
+        map.addOverlay( marker );
+        var opt = {
+            title : info[i].addr,
+            enableMessage:true
+        };
+        var infoWindow = new BMap.InfoWindow("", opt); 
+        marker.addEventListener("click", function(){
+            this.openInfoWindow(infoWindow);
+        });
+    }
+    var env = map.getViewport(points);
+    map.centerAndZoom(env.center, env.zoom);
+}
+
+var cityList = [
+    "上海", "北京","广州","深圳"
+];
+var myGeo = new BMap.Geocoder();
+
+$("#J_find-address").click(function(){
+    var address = $("#J_adress-here").val().trim();
+    if(address != ""){
+        address = address.replace(/\n+/g,"|").split("|");
+    }
+    
+    var len = address.length;
+    if(len == 0) return;
+    var index = 0;
+    var points = [];
+    var info = [];
+    var defaultCity = "上海";
+    var currentCity = "";
+    $(address).each(function(idx, addr){
+        addr = addr.trim();
+        $(cityList).each(function(subidx, city){
+            if(currentCity != "" && addr.indexOf(city) != -1){
+                currentCity = city;
+            }
+        });
+        if(currentCity == ""){ 
+            currentCity = defaultCity;
+        }
+        myGeo.getPoint(addr, function(point){
+          index ++;
+          if(point){
+             points.push(point);
+             info.push({
+                 point : point,
+                 addr: addr
+             });
+             
+          }
+          //last one.
+          if(index == len){
+              render(points, info);
+          }
+        }, currentCity + "市");
+    });
+    
+});
+
+/*
+//suport location
+if (navigator.geolocation) {
+    function getPositionSuccess( position ){
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+        console.log( "您所在的位置： 经度" + lat + "，纬度" + lng );
+        if(typeof position.address !== "undefined"){
+            var country = position.address.country;
+            var province = position.address.region;
+            var city = position.address.city;
+            console.log("您位于 " + country + province + "省" + city +"市");
+        }
+    }
+    function getPositionError(error){
+        switch(error.code){
+            case error.TIMEOUT :
+                console.log( " 连接超时，请重试 " );
+                break;
+            case error.PERMISSION_DENIED :
+                console.log( " 您拒绝了使用位置共享服务，查询已取消 " );
+                break;
+            case error.POSITION_UNAVAILABLE :
+                console.log( " 亲爱的火星网友，非常抱歉，我们暂时无法为您所在的星球提供位置服务 " );
+                break;
+        }
+    }
+    
+    navigator.geolocation.getCurrentPosition(getPositionSuccess, getPositionError,{
+        timeout : 10000 // 10 秒超时
+    });    
+} */  
+</script>
+</body>    
+</html>   

@@ -1,0 +1,20 @@
+{			           
+	"ball":{
+	  "type":0,
+	  "img":"ball"
+	},	
+	"stick":{
+	  "type":0,
+	  "img":"stick"
+	},	
+	"block":{
+	  "type":1,
+	  "img":"block", 
+	  "rc":[2,3,250,58],
+	  "animations":{
+		"s1":[1],
+		"s2":[3],
+		"s3":[4]
+	  }
+	}
+}
