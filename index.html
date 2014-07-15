@@ -1,63 +1,45 @@
-<html>
-	<head>
-		<title>demos</title>
-	</head>
-	<body>
-    <h1 class="entry-title">
-        DEMOS
-    </h1>
-    <p style="text-align: center;">
-        <a href="http://farman.sinaapp.com/static/player-box/" target="_blank">
-                     音乐盒
-            <br>
-            <img alt="" src="http://farman.sinaapp.com/static/imgs/play-box.png" width="300">
-        </a>
-    </p>
-    <p style="text-align: center;">
-        <a href="http://farman.sinaapp.com/static/plane/index.htm" target="_blank">
-                    飞机小游戏
-            <br>
-            <img alt="" src="http://farman.sinaapp.com/static/imgs/plane.png" width="300">
-        </a>
-    </p>
-    <p style="text-align: center;">
-        <a href="http://farman.sinaapp.com/static/boll/index.htm" target="_blank">
-            挡板球
-            <br>
-            <img alt="" src="http://farman.sinaapp.com/static/imgs/boll.png" width="300">
-        </a>
-    </p>
-    <p style="text-align: center;">
-        <a href="http://farman.sinaapp.com/static/rocket/index.html" target="_blank">
-        	飞行火箭
-        	<br>
-            <img class="aligncenter" alt="" src="http://farman.sinaapp.com/static/imgs/rocket.png" width="300">
-        </a>
-    </p>
-    <p>
-        &nbsp;
-    </p>
-    <p>
-        <strong>
-            其他
-        </strong>
-    </p>
-    <p>
-        <a href="http://farman.sinaapp.com/static/music/" target="_blank">
-            老版音乐盒
-        </a>
-        &nbsp;&nbsp;
-        <a href="http://farman.sinaapp.com/static/game/saolei.html" target="_blank">
-            扫雷
-        </a>
-        &nbsp;&nbsp;
-        <a href="http://farman.sinaapp.com/static/tool/address.html" target="_blank">
-            地图小Demo
-        </a>
-        &nbsp;&nbsp;
-        <a href="http://farman.sinaapp.com/static/html5/worker/worker.html" target="_blank">
-            web worker
-        </a>
-    </p>
-</body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1>文章列表</h1>
+
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  
+  <h1>DEMOS</h1>
+
+  <ul class="posts">
+      <li>
+        <a class="post-link" href="http://farman.sinaapp.com/static/player-box/" target="_blank">音乐盒</a>
+      </li>
+      <li>
+        <a class="post-link" href="http://farman.sinaapp.com/static/plane/index.htm" target="_blank">飞机小游戏</a>
+      </li>
+      <li>
+        <a class="post-link" href="http://farman.sinaapp.com/static/boll/index.htm" target="_blank">挡板球</a>
+      </li>
+      <li>
+        <a class="post-link" href="http://farman.sinaapp.com/static/rocket/index.html" target="_blank">飞行火箭</a>
+      </li>
+      <li>
+        <a class="post-link" href="http://farman.sinaapp.com/static/game/saolei.html" target="_blank">扫雷</a>
+      </li>
+      <li>
+        <a class="post-link" href="http://farman.sinaapp.com/static/music/" target="_blank">老版音乐盒</a>
+      </li>
+      <li>
+        <a class="post-link" href="http://farman.sinaapp.com/static/html5/worker/worker.html" target="_blank">web worker</a>
+      </li>
+  </ul>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

@@ -1,0 +1,10 @@
+# Site settings
+title: 前端@上海
+email: frontendsh@126.com
+description: "今天我们必须努力生活，不然明天就会被社会淘汰。"
+baseurl: ""
+url: "http://frontend-sh.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
