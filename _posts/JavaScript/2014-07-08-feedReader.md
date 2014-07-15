@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Rss阅读器思考记录"
+date:   2014-07-08 12:04:29
+categories: work
+---
+
 #Rss阅读器思考记录
 > 想熟悉nodejs完成一个项目，但是对于MVC了解实在太少，于是想到做一个Rss阅读器。
 
