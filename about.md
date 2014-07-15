@@ -1,18 +1,24 @@
-##关于我们
+##关于我
 
-###我们是谁?
+写点啥好呢？
+身在魔都，我在 [百度](http://www.baidu.com)，2014.04.01已经加入[携程](http://www.ctrip.com/)从事无线邮轮的研发，不想每天混吃混喝等死，希望突破自我，热衷于互联网创业（游戏，手机，电商行业优先考虑），如果你有好的创业团队，请联系我。
+希望从事纯nodejs或object-c开发工作。
 
->我们是FrontEnd-SH团队，FrontEnd指前端，SH代表上海。目前团队有15人左右，团队中的成员主要来自百度、携程等国内著名互联网公司以及新锐互联网创业团队。
+##自我介绍
+喜欢前端，喜爱游戏动漫，热爱生活，喜欢研究，爱打羽毛球。
+从事前端5-6年了，想继续走下去。
+来自安徽，向往安静平和的生活。
 
-###我们的目标是？
+##掌握技能
+* 熟悉前端技能语言 css3, html5, js.
+* 熟悉各种项目版本管理工具svn, git.
+* 熟练nodejs(关注开源项目，自己也会写一些项目)
+* php, python, object-c, asp.net 均有所涉及了解
+* Linux, Macos, Windows均可以正常开发工作.
 
->* 我们致力于做最专业的前端团队；
->* 我们致力于打造属于前端爱好者的技术分享社区平台；
->* 我们致力于前端技术创新与应用开发；
->* 我们致力于让前端技术更好地服务于我们的工作和生活；
-
-###如何加入我们？
-
->* 欢迎访问我们的博客：http://frontend-sh.github.io/
->* 我们的QQ群：256115278（上海前端精英汇）
->* 我们的邮箱：tuan_fe@163.com frontendsh@126.com
+##联系方式
+QQ: 412465712  
+mail: [yuhongfei1001@163.com](mailto:yuhongfei1001@163.com)  
+blog: [gitpress](http://blog.farmanyu.gitpress.org/), [farman](http://farman.sinaapp.com)  
+github: [http://github.com/farmanyu](http://github.com/farmanyu)  
+resume: [http://resume.github.io/?farmanyu](http://resume.github.io/?farmanyu)

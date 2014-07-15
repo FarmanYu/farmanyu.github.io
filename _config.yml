@@ -1,9 +1,9 @@
 # Site settings
-title: 前端@上海
-email: frontendsh@126.com
-description: "今天我们必须努力生活，不然明天就会被社会淘汰。"
+title: 前端自由者
+email: yuhongfei1001@163.com
+description: "最可怕的生活不是今天不知道明天怎样，而是现在就看到了自己一生的全部，而且无法改变。"
 baseurl: ""
-url: "http://frontend-sh.github.io"
+url: "http://farmanyu.github.io"
 
 # Build settings
 markdown: kramdown
