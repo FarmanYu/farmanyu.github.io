@@ -37,8 +37,8 @@ nav:
     class: none
 
 page:
-  - text: 文章分类
-    url: /archives.html
+  - text: 我的作品
+    url: /games.html
     last: true
   - text: 友情链接
     url: /links.html
