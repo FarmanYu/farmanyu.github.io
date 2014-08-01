@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "Node.js中的child_process及进程通信"
-date:   2014-05-16 12:04:29
-categories: work
+keywords: node,nodejs,child_process,module,require
 ---
 
 #Node.js中的child_process及进程通信

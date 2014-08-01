@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "手机上传图片问题小结2"
-date:   2014-05-27 12:04:29
-categories: work
+keywords: work, imgupload, img, upload
 ---
 
 #手机上传图片问题小结2

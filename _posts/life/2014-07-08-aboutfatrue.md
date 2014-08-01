@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "关于自己的思考"
-date:   2014-07-08 12:04:29
-categories: work
+keywords: work,thinging,fature
 ---
 
 #关于自己的思考

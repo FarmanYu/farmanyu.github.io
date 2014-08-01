@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "如何利用子进程开启关闭服务"
-date:   2014-05-17 12:04:29
-categories: work
+keywords: node, nodejs
 ---
 
 nodejs有child_process(子进程) API，如果利用child_process开启关闭server呢，先来贴代码:

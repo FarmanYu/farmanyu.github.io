@@ -1,8 +1,7 @@
 ---
 layout: post
 title:  "Rss阅读器思考记录"
-date:   2014-07-08 12:04:29
-categories: work
+keywords: rss, reader
 ---
 
 #Rss阅读器思考记录
