@@ -11,4 +11,4 @@ keywords: rss, reader
 
 > 第一个想到的就是experss，nodejs写的本地服务器，作为本地阅读的server。
 
-找到一些Rss源，存成数据文件，提供使用。
+找到一些Rss源，存成数据文件，提供使用。  
