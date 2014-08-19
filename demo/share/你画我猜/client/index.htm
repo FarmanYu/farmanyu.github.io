@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<title>你画我猜</title>
+<link href="images/CSS.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--登陆层-->
+<div id="loginDiv" class="dlbj">
+<div>服务器：<input id="host" type="text" name="textfield" value="127.0.0.1">
+    <br>
+</div>
+<div>用户名：<input id="tUser" type="text" name="textfield"></div>
+<div class="dlfwq" id="btnCon"><img src="images/dlfwq.png"  border="0"></div>
+</div>
+<!--主容器层-->
+<div id="main" class="main">
+<div>
+<div class="tx"></div>
+<div class="wz">
+  <div id="dround"></div>
+  <!--显示问题区域-->
+  <span id="question"></span>
+</div>
+  <!--显示时间-->
+  <div id="qTime" class="time">60</div>
+  <div class="tc">离开房间<img src="images/edit_undo.png" align="absmiddle"></div>
+</div>
+  <div class="qc"></div>
+<div>
+  <!--绘图主层-->
+  <div class="hbbox">
+   <!--绘图区域-->
+  <div id="hb" class="hb">
+     <!--效果层-->
+     <div id="effect"></div>
+     <canvas id="paintArea"  width="525" height="370" style="display:none" ></canvas>
+  </div>
+   <!--用户显示区域-->
+   <div id="userArea">  
+   </div>
+  </div>
+<!--工具选项区-->
+<div class="hbr">
+<div id="operDiv" style="display:none">
+    <!--颜色选取区-->
+	<div id="ys" class="ys"></div>
+	<!--画笔大小选择区-->
+	<div id="bc" class="bc"></div>
+	<!--定义橡皮擦工具-->
+	<div id="ssx" class="tb">
+	  <div id="btnRub" class="tb2"><img src="images/01945.png"></div>
+	  <div id="btnClear" class="tb3"><img src="images/053753321.gif"></div>
+	</div>
+</div>
+<!--消息发布主层-->
+<div id="msgArea" class="msgArea">
+</div>
+ <div class="bd">
+  <input type="button" id="btnSendMsg" value="发送"><input type="text" size="13" id="txtMsg">  
+ </div>
+</div>
+</div>
+</div>
+<!--定义消息层-->
+<div id="msg">
+</div>
+</body>
+<script src="../js/jquery.js" charset="utf-8"></script>
+<script src="../js/client.js" charset="utf-8"></script>
+<script src="../js/painter.js" charset="utf-8"></script>
+<script src="../js/socket.io.js" charset="utf-8"></script>
+<script>
+//检测是否支持Html5
+function isSupportHTML5()
+{
+  return (typeof(Worker) !== "undefined");
+}
+//初始化
+$(document).ready(function(){ 
+  if(!isSupportHTML5())
+  {
+    alert("您的浏览器不支持HTML5,请更换浏览器!");
+  }
+  else
+  {
+    $("#btnCon").click(function(){       
+      var host = $("#host").val(),
+	      user = $("#tUser").val();
+      Client.connect(host,9000);
+	  Client.user.uname = user;
+	  Client.login(function(data){	    
+	    //登陆成功
+	    if(data==1)
+		{
+		  alert("该用户已经存在，请换用户登陆!");
+		}
+		else if(data==2)
+		{
+		  alert("游戏正在进行中，请稍候登陆!");
+		}
+		else
+		{		   
+		  $("#loginDiv").hide();
+          $("#main").show();
+		}
+	  });
+   });
+   //绑定发送消息事件
+   $("#btnSendMsg").click(function(){
+     var txt = $("#txtMsg").val();     
+	 Client.sendMsg(txt);
+	 $("#txtMsg").val("");
+   });
+   $("#txtMsg").on("keydown",function(e){     
+     if(e.keyCode==13)
+	 {
+       var txt = $("#txtMsg").val();
+	   Client.sendMsg(txt);
+	   $("#txtMsg").val("");
+	 }
+   })  
+  }   
+})
+</script>
+</html>

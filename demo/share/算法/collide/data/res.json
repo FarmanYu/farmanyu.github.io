@@ -1,0 +1,11 @@
+{
+  "image":
+	[		  
+	   {"name":"cm","src":"../../imgs/cm.png"},
+	   {"name":"plane","src":"../../imgs/p1.png"}       
+	], 
+  "frame":         
+	[
+	  {"name":"sprite","src":"data/sprite_frames.json"}
+	]
+}

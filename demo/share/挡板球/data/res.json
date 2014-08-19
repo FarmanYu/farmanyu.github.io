@@ -1,0 +1,13 @@
+{
+  "image":
+	[		  
+	   {"name":"ball","src":"img/ball.png"},
+	   {"name":"loading","src":"img/loading.gif"},
+	   {"name":"stick","src":"img/stick.png"},
+	   {"name":"block","src":"img/block.png"}
+	], 
+  "frame":         
+	[
+	  {"name":"sprite","src":"data/sprite_frames.json"}
+	]
+}
