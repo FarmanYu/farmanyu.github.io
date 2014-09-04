@@ -1,8 +1,7 @@
 ---
 layout: post
-title: &#x8BA9;&#x4F60;&#x7684;Git&#x6C34;&#x5E73;&#x66F4;&#x4E0A;&#x4E00;&#x5C42;&#x697C;&#x7684;10&#x4E2A;&#x5C0F;&#x8D34;&#x58EB; | &#x7A0B;&#x5E8F;&#x5E08;
+title: 提升git的10个技巧
 description: 最近，我们发表了关于Git基础知识和在团队中使用Git的教程。我们之前讨论的那些命令，已经足够让帮助一个开发者在Git世界里生存了。本篇文章，我们将尝试探索如何更有效的管理您的时间以及如何充分使用Git提供的各种功能。
-keywords: 
 author: FHY
 ---
 
