@@ -6,7 +6,9 @@ keywords: game,blockpuzzle
 author: FHY
 ---
 ##游戏地址
-[blockpuzzle](http://farman.sinaapp.com/static/blockpuzzle/index.html)
+demo地址：[http://farman.sinaapp.com/static/blockpuzzle/index.html](http://farman.sinaapp.com/static/blockpuzzle/index.html)
+
+代码地址：[https://github.com/FarmanYu/blockpuzzle](https://github.com/FarmanYu/blockpuzzle)
 
 ##背景
 游戏来自于facebook上的html5小游戏，现在因为一些原因（你懂的，FUCK GFW），无法访问了，可以看下windows phone上的应用
