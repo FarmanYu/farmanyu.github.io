@@ -8,11 +8,22 @@ url: "http://farmanyu.github.io"
 feed: /feed.xml
 
 # Build settings
-markdown: rdiscount
-pygments: true
-plugins: ./_plugins
-paginate: 8
-safe: false
+markdown:   rdiscount
+pygments:   true
+paginate:   4
+
+style:  /css/style.css
+blogName:     
+blogDesc: 
+favicon:   /favicon.ico
+theme:    default
+
+indexContent:     true
+imageLink:        http://www.pizn.net/static/images/20121109Monutain.jpg
+
+disqus:           piznblog
+
+copyright:        Copyright © 2011-2012 Farman All rights reserved.            
 
 #菜单配置
 nav:
@@ -22,7 +33,7 @@ nav:
     class: home
   - text: 文章归档
     url: /archives.html
-    icon: icon-reorder
+    icon: icon-list-ul
     class: none
   - text: 关于我
     url: /contact.html
@@ -50,3 +61,9 @@ page:
 
 author:
   name: Farman
+  email:   yuhongfei1001@163.com
+  description:  "最可怕的生活不是今天不知道明天怎样，而是现在就看到了自己一生的全部，而且无法改变。"
+
+duoshuo:
+  config: true
+  id: farman

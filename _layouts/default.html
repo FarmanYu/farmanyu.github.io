@@ -1,60 +1,77 @@
 <!DOCTYPE html>
-<html id="J-html" class="">
+<html>
 <head>
-     <!--
-     **
-     * Author:         掌心
-     * Contact:        zhanxin.info@gmail.com
-     * Theme Name:     iLotus
-     **
+    <!--
+    **
+    *
+    * Author:         PIZn
+    * Contact:        pizner@gmail.com
+    * Theme Name:     theOne
+    * Version:        1.0
+    * Date:			  2012.11.11
+    *
+    **
     -->
-    <meta charset="UTF-8" />
-    <title>
-        {% if page.title %}
-            {{ page.title }}
-        {% else %}
-            {{ site.title }}
-        {% endif %}
-    </title>
+    <meta charset="utf-8" />
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Jekyll" />
     <meta name="author" content="{{ site.author.name }}" />
-    <meta name="description" content="{{ page.description }}" />
-    <meta name="keywords" content="{{ page.keywords | join: ',' }}" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="all" href="{{ site.url }}/static/style.css" />
+    <meta name="description" content="{{ site.descripton }}" />
+    <link rel="stylesheet" href="{{ site.url }}{{ site.style }}" type="text/css" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
+    <link rel="shortcut icon" href="{{ site.url }}{{ site.favicon }}" type="image/x-icon" />
     <!--[if lt IE 9]>
-    <script src="{{ site.url }}/static/js/html5.js" type="text/javascript"></script>
+    <script src="{{ site.url }}/js/html5.js" type="text/javascript"></script>
     <![endif]-->
-    <script src="{{ site.url }}/static/js/jquery.js" type="text/javascript"></script>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" class="home blog lotus index">
-    <nav class="lotus-nav">
-        <ul>
-            {% for link in site.nav %}
-            {% assign active = nil %}
-            {% assign homeClass = nil %}
-            {% if page.url == link.url%}
-              {% assign active = 'current' %}
-            {% endif %}
-            {% if link.class == 'home' %}
-                {% assign homeClass = 'home ' %}
-            {% endif %}
-            <li class="{{ homeClass }}{{ active }}">
-                <a href="{{ link.url }}" rel="bookmark" title="{{link.text}}">
-                    <i class="{{ link.icon }}"></i>
-                </a>
-                {{ indicator }}
-            </li>
-            {% endfor %}
-        </ul>
-    </nav>
-
-    {{ content }}
-
-<footer class="lotus-footer">
-	<p>Copyright © 2010–2014 {{ site.title }} All rights reserved. Design by <a href="http://www.zhanxin.info" target="_blank">zhanxin</a>.</p>
-</footer>
-<script src="{{ site.url }}/static/js/jquery.scrollTo.js" type="text/javascript"></script>
-<script src="{{ site.url }}/static/js/iLotus.js" type="text/javascript"></script>
+<body id="{{ site.theme }}">
+<div id="head-line"></div>
+<div id="content">
+    <header id="head">
+        <div id="logo">
+            <h1>{{ site.blogName }}</h1>
+            <h2>{{ site.blogDesc }}</h2>
+        </div>
+        <nav id="nav">
+            <ul>
+                {% for link in site.nav %}
+                <li class="fn-clear">
+                    <a href="{{ link.url }}" rel="nofollow" title="{{link.text}}">
+                        <i class="{{ link.icon }}"></i>
+                        {{link.text}}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+    <section id="contain">
+        <header id="begin">
+            <span>{{ page.date }}</span>
+        </header>
+		{{ content }}
+        <footer id="foot">
+            <p>{{ site.copyright }}Design by <a href="http://www.pizn.net" target="_blank" title="the One theme author">PIZn</a></p>
+        </footer>
+    </section>
+</div>
+<div id="foot-line"></div>
+<script src="{{ site.url }}/js/jquery.js" type="text/javascript"></script>
+<script src="{{ site.url }}/js/jquery.scrollTo.js" type="text/javascript"></script>
+<script src="{{ site.url }}/js/theOne.js" type="text/javascript"></script>
+{% if site.duoshuo.config %}
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"{{ site.duoshuo.id }}"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    {% endif %}
 </body>
 </html>
