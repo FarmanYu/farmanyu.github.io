@@ -6,11 +6,11 @@
 var cube = (function(){
 	var canvas = document.getElementById('cube'),
 		ctx = canvas.getContext('2d'),
-		width = 102,
-		height = 90,
+		width = 204,
+		height = 180,
 		centerX = (width / 2),
 		centerY = (height / 2) - 2,
-		side = 20,
+		side = 40,
 		perspective = 200,
 		xStart = .45, yStart = .85, zStart = 0,
 		xEnd = xStart, yEnd = yStart, zEnd = zStart,
@@ -103,9 +103,9 @@ var cube = (function(){
 			if (color > 255) color = 255;
 
 			if (color > 22) {
-				r = Math.round(color / 255 * 79);
-				g = Math.round(color / 255 * 78);
-				b = Math.round(color / 255 * 72);
+				r = Math.round(color / 255 * 56);
+				g = Math.round(color / 255 * 121);
+				b = Math.round(color / 255 * 217);
 				ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
 				ctx.strokeStyle = 'rgb(24,24,22)';
 				ctx.beginPath();
