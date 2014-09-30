@@ -47,7 +47,7 @@
     </header>
     <section id="contain">
         <header id="begin">
-            <span>{{ page.date }}</span>
+            <span id="time-now"></span>
         </header>
 		{{ content }}
         <footer id="foot">
@@ -60,6 +60,7 @@
 <script src="{{ site.url }}/js/jquery.scrollTo.js" type="text/javascript"></script>
 <script src="{{ site.url }}/js/theOne.js" type="text/javascript"></script>
 <script src="{{ site.url }}/js/cube.js" type="text/javascript"></script>
+<script src="{{ site.url }}/js/time.js" type="text/javascript"></script>
 {% if site.duoshuo.config %}
     <script type="text/javascript">
         var duoshuoQuery = {short_name:"{{ site.duoshuo.id }}"};

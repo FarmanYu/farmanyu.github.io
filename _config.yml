@@ -19,11 +19,9 @@ favicon:   /favicon.ico
 theme:    blue
 
 indexContent:     true
-imageLink:        http://www.pizn.net/static/images/20121109Monutain.jpg
+imageLink:       
 
-disqus:           piznblog
-
-copyright:        Copyright © 2011-2012 Farman All rights reserved.            
+copyright:        Copyright © 2013-2014 Farman All rights reserved.            
 
 #菜单配置
 nav:
