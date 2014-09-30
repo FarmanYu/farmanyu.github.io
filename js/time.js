@@ -7,7 +7,7 @@
 	var minute = now.getMinutes();
 	var second = now.getSeconds();
 	var day = "星期" + "日一二三四五六".charAt( now.getDay() );
-	var tpl = ["现在是",year,"年",month,"月",date,"日 ", hour,":",minute,":",second," ",day].join("");
+	var tpl = ["现在是",year,"年",month,"月",date,"日 ",day," ", hour,":",minute,":",second].join("");
 	$("#time-now").html(tpl);
 	setTimeout(arguments.callee, 1000);
 })();
