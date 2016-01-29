@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>PHP模拟登录并获取数据 | 前端自由者</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="cURL 是一个功能强大的PHP库，使用PHP的cURL库可以简单和有效地抓取网页并采集内容，设置cookie完成模拟登录网页，curl提供了丰富的函数，开发者可以从PHP手册中获取更多关于cURL信息。本文以模拟登录开源中国(oschina)为例，和大家分享cURL的使用。PHP的curl()在抓取网页的效率方面是比较高的，而且支持多线程，而file_get_contents()效率就要稍低些，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP模拟登录并获取数据">
+<meta property="og:url" content="http://farmanyu.github.io/2014/05/15/curl/index.html">
+<meta property="og:site_name" content="前端自由者">
+<meta property="og:description" content="cURL 是一个功能强大的PHP库，使用PHP的cURL库可以简单和有效地抓取网页并采集内容，设置cookie完成模拟登录网页，curl提供了丰富的函数，开发者可以从PHP手册中获取更多关于cURL信息。本文以模拟登录开源中国(oschina)为例，和大家分享cURL的使用。PHP的curl()在抓取网页的效率方面是比较高的，而且支持多线程，而file_get_contents()效率就要稍低些，">
+<meta property="og:updated_time" content="2016-01-29T03:45:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP模拟登录并获取数据">
+<meta name="twitter:description" content="cURL 是一个功能强大的PHP库，使用PHP的cURL库可以简单和有效地抓取网页并采集内容，设置cookie完成模拟登录网页，curl提供了丰富的函数，开发者可以从PHP手册中获取更多关于cURL信息。本文以模拟登录开源中国(oschina)为例，和大家分享cURL的使用。PHP的curl()在抓取网页的效率方面是比较高的，而且支持多线程，而file_get_contents()效率就要稍低些，">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars2.githubusercontent.com/u/741048?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Farman</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/life">生活</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/FarmanYu" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/gghongfei" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/farman-6" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/child-process/" style="font-size: 10px;">child_process</a> <a href="/tags/frontend/" style="font-size: 16.67px;">frontend</a> <a href="/tags/game/" style="font-size: 11.67px;">game</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html5/" style="font-size: 13.33px;">html5</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/node/" style="font-size: 13.33px;">node</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/soft/" style="font-size: 10px;">soft</a> <a href="/tags/tools/" style="font-size: 18.33px;">tools</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">最可怕的生活不是今天不知道明天怎样，而是现在就看到了自己一生的全部，而且无法改变。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Farman</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars2.githubusercontent.com/u/741048?v=3&amp;s=460" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Farman</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/life">生活</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/FarmanYu" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/gghongfei" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/farman-6" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-curl" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/05/15/curl/" class="article-date">
+  	<time datetime="2014-05-14T16:00:00.000Z" itemprop="datePublished">2014-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP模拟登录并获取数据
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>cURL 是一个功能强大的PHP库，使用PHP的cURL库可以简单和有效地抓取网页并采集内容，设置cookie完成模拟登录网页，curl提供了丰富的函数，开发者可以从PHP手册中获取更多关于cURL信息。本文以模拟登录开源中国(oschina)为例，和大家分享cURL的使用。<br>PHP的curl()在抓取网页的效率方面是比较高的，而且支持多线程，而file_get_contents()效率就要稍低些，当然，使用curl时需要开启下curl扩展。  </p>
+<p><em>代码实战</em><br>先来看登录部分的代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模拟登录 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login_post</span><span class="params">(<span class="variable">$url</span>, <span class="variable">$cookie</span>, <span class="variable">$post</span>)</span> </span>&#123; </span><br><span class="line">    <span class="variable">$curl</span> = curl_init();<span class="comment">//初始化curl模块 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_URL, <span class="variable">$url</span>);<span class="comment">//登录提交的地址 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_HEADER, <span class="number">0</span>);<span class="comment">//是否显示头信息 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_RETURNTRANSFER, <span class="number">0</span>);<span class="comment">//是否自动显示返回的信息 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_COOKIEJAR, <span class="variable">$cookie</span>); <span class="comment">//设置Cookie信息保存在指定的文件中 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_POST, <span class="number">1</span>);<span class="comment">//post方式提交 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_POSTFIELDS, http_build_query(<span class="variable">$post</span>));<span class="comment">//要提交的信息 </span></span><br><span class="line">    curl_exec(<span class="variable">$curl</span>);<span class="comment">//执行cURL </span></span><br><span class="line">    curl_close(<span class="variable">$curl</span>);<span class="comment">//关闭cURL资源，并且释放系统资源 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数login_post()首先初始化curl_init()，然后使用curl_setopt()设置相关选项信息，包括要提交的url地址，保存的cookie文件，post的数据（用户名和密码等信息），是否返回信息等等，然后curl_exec执行curl，最后curl_close()释放资源。注意PHP自带的http_build_query()可以将数组转换成相连接的字符串。<br>接下来如果登录成功后，我们要获取登录成功后的页面信息。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//登录成功后获取数据 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_content</span><span class="params">(<span class="variable">$url</span>, <span class="variable">$cookie</span>)</span> </span>&#123; </span><br><span class="line">    <span class="variable">$ch</span> = curl_init(); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_URL, <span class="variable">$url</span>); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_HEADER, <span class="number">0</span>); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_RETURNTRANSFER, <span class="number">1</span>); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_COOKIEFILE, <span class="variable">$cookie</span>); <span class="comment">//读取cookie </span></span><br><span class="line">    <span class="variable">$rs</span> = curl_exec(<span class="variable">$ch</span>); <span class="comment">//执行cURL抓取页面内容 </span></span><br><span class="line">    curl_close(<span class="variable">$ch</span>); </span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$rs</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数get_content()中也是先初始化curl，然后设置相关选项，执行curl，释放资源。其中我们设置CURLOPT_RETURNTRANSFER为1即自动返回信息，而CURLOPT_COOKIEFILE可以读取到登录时保存的cookie信息，最后将页面内容返回。<br>我们的最终目的是要获取到模拟登录后的信息，也就是只有正常登录成功后才能获取的有用信息。接下来我们以登录开源中国的移动版为例，看看如何抓取到登录成功后的信息。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置post的数据 </span></span><br><span class="line"><span class="variable">$post</span> = <span class="keyword">array</span> ( </span><br><span class="line">    <span class="string">'email'</span> =&gt; <span class="string">'oschina账户'</span>, </span><br><span class="line">    <span class="string">'pwd'</span> =&gt; <span class="string">'oschina密码'</span>, </span><br><span class="line">    <span class="string">'goto_page'</span> =&gt; <span class="string">'/my'</span>, </span><br><span class="line">    <span class="string">'error_page'</span> =&gt; <span class="string">'/login'</span>, </span><br><span class="line">    <span class="string">'save_login'</span> =&gt; <span class="string">'1'</span>, </span><br><span class="line">    <span class="string">'submit'</span> =&gt; <span class="string">'现在登录'</span> </span><br><span class="line">); </span><br><span class="line"> </span><br><span class="line"><span class="comment">//登录地址 </span></span><br><span class="line"><span class="variable">$url</span> = <span class="string">"http://m.oschina.net/action/user/login"</span>; </span><br><span class="line"><span class="comment">//设置cookie保存路径 </span></span><br><span class="line"><span class="variable">$cookie</span> = dirname(<span class="keyword">__FILE__</span>) . <span class="string">'/cookie_oschina.txt'</span>; </span><br><span class="line"><span class="comment">//登录后要获取信息的地址 </span></span><br><span class="line"><span class="variable">$url2</span> = <span class="string">"http://m.oschina.net/my"</span>; </span><br><span class="line"><span class="comment">//模拟登录 </span></span><br><span class="line">login_post(<span class="variable">$url</span>, <span class="variable">$cookie</span>, <span class="variable">$post</span>); </span><br><span class="line"><span class="comment">//获取登录页的信息 </span></span><br><span class="line"><span class="variable">$content</span> = get_content(<span class="variable">$url2</span>, <span class="variable">$cookie</span>); </span><br><span class="line"><span class="comment">//删除cookie文件 </span></span><br><span class="line">@ unlink(<span class="variable">$cookie</span>); </span><br><span class="line"><span class="comment">//匹配页面信息 </span></span><br><span class="line"><span class="variable">$preg</span> = <span class="string">"/&lt;td class='portrait'&gt;(.*)&lt;\/td&gt;/i"</span>; </span><br><span class="line">preg_match_all(<span class="variable">$preg</span>, <span class="variable">$content</span>, <span class="variable">$arr</span>); </span><br><span class="line"><span class="variable">$str</span> = <span class="variable">$arr</span>[<span class="number">1</span>][<span class="number">0</span>]; </span><br><span class="line"><span class="comment">//输出内容 </span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$str</span>;</span><br></pre></td></tr></table></figure>
+<p>运行上述代码后，我们会看到最终获取到登录用户的头像图片。  </p>
+<p><em>使用总结</em><br>1、初始化curl；<br>2、使用curl_setopt设置目标url，和其他选项；<br>3、curl_exec，执行curl；<br>4、执行后，关闭curl；<br>5、输出数据。  </p>
+<p><em>参考文献</em><br>《curl简介及php中的curl》，作者不详，<a href="http://www.2cto.com/kf/201208/147091.html" target="_blank" rel="external">http://www.2cto.com/kf/201208/147091.html</a><br>《使用PHP CURL的POST数据》，作者：Veda，<a href="http://www.nowamagic.net/librarys/veda/detail/124" target="_blank" rel="external">http://www.nowamagic.net/librarys/veda/detail/124</a><br>《php 使用curl模拟登录discuz以及模拟发帖》，作者：tianxin，<a href="http://www.cnblogs.com/tianxin2001x/archive/2009/10/28/1591311.html" target="_blank" rel="external">http://www.cnblogs.com/tianxin2001x/archive/2009/10/28/1591311.html</a></p>
+<p>转载自<a href="http://www.helloweba.com/view-blog-253.html" target="_blank" rel="external">http://www.helloweba.com/view-blog-253.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/05/15/forwork/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          你在为谁工作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/05/14/console/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浏览器控制台输出的console语法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="curl" data-title="PHP模拟登录并获取数据" data-url="http://farmanyu.github.io/2014/05/15/curl/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Farman
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

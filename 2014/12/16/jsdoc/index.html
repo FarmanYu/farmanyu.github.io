@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>jsdoc使用说明文档 | 前端自由者</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JsDoc Toolkit 是一个把js描述格式化成文档的工具。开发者只需按JsDoc的规范写好注释就可以很方便导出文档。它是google 推荐的 JsDoc生成工具。 基于java的注释规则来生成文档。后来有人开发出来了nodejs版本。  
+注释规范完整规范参考地址:http://usejsdoc.org/  
+12345678910111213141516171819202122232425">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jsdoc使用说明文档">
+<meta property="og:url" content="http://farmanyu.github.io/2014/12/16/jsdoc/index.html">
+<meta property="og:site_name" content="前端自由者">
+<meta property="og:description" content="JsDoc Toolkit 是一个把js描述格式化成文档的工具。开发者只需按JsDoc的规范写好注释就可以很方便导出文档。它是google 推荐的 JsDoc生成工具。 基于java的注释规则来生成文档。后来有人开发出来了nodejs版本。  
+注释规范完整规范参考地址:http://usejsdoc.org/  
+12345678910111213141516171819202122232425">
+<meta property="og:updated_time" content="2016-01-29T03:45:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jsdoc使用说明文档">
+<meta name="twitter:description" content="JsDoc Toolkit 是一个把js描述格式化成文档的工具。开发者只需按JsDoc的规范写好注释就可以很方便导出文档。它是google 推荐的 JsDoc生成工具。 基于java的注释规则来生成文档。后来有人开发出来了nodejs版本。  
+注释规范完整规范参考地址:http://usejsdoc.org/  
+12345678910111213141516171819202122232425">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars2.githubusercontent.com/u/741048?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Farman</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/life">生活</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/FarmanYu" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/gghongfei" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/farman-6" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/child-process/" style="font-size: 10px;">child_process</a> <a href="/tags/frontend/" style="font-size: 16.67px;">frontend</a> <a href="/tags/game/" style="font-size: 11.67px;">game</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html5/" style="font-size: 13.33px;">html5</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/node/" style="font-size: 13.33px;">node</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/soft/" style="font-size: 10px;">soft</a> <a href="/tags/tools/" style="font-size: 18.33px;">tools</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">最可怕的生活不是今天不知道明天怎样，而是现在就看到了自己一生的全部，而且无法改变。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Farman</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars2.githubusercontent.com/u/741048?v=3&amp;s=460" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Farman</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/life">生活</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/FarmanYu" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/gghongfei" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/farman-6" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-jsdoc" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/12/16/jsdoc/" class="article-date">
+  	<time datetime="2014-12-15T16:00:00.000Z" itemprop="datePublished">2014-12-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jsdoc使用说明文档
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JsDoc Toolkit 是一个把js描述格式化成文档的工具。开发者只需按JsDoc的规范写好注释就可以很方便导出文档。它是google 推荐的 JsDoc生成工具。 基于java的注释规则来生成文档。后来有人开发出来了nodejs版本。  </p>
+<h3 id="u6CE8_u91CA_u89C4_u8303"><a href="#u6CE8_u91CA_u89C4_u8303" class="headerlink" title="注释规范"></a>注释规范</h3><p>完整规范参考地址:<a href="http://usejsdoc.org/" target="_blank" rel="external">http://usejsdoc.org/</a>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***</span><br><span class="line">	@abstract (synonyms: @virtual)</span><br><span class="line">	This member must be implemented (or overridden) by the inheritor.</span><br><span class="line">	@access</span><br><span class="line">	Specify the access level of this member (private, public, or protected).</span><br><span class="line">	@alias</span><br><span class="line">	Treat a member as if it had a different name.</span><br><span class="line">	@augments (synonyms: @extends)</span><br><span class="line">	This object adds onto a parent object.</span><br><span class="line">	@author</span><br><span class="line">	Identify the author of an item.</span><br><span class="line">	@borrows</span><br><span class="line">	This object uses something from another object.</span><br><span class="line">	@callback</span><br><span class="line">	Document a callback function.</span><br><span class="line">	@class (synonyms: @constructor)</span><br><span class="line">	This function is intended to be called with the "new" keyword.</span><br><span class="line">	@classdesc</span><br><span class="line">	Use the following text to describe the entire class.</span><br><span class="line">	@constant (synonyms: @const)</span><br><span class="line">	Document an object as a constant.</span><br><span class="line">	@constructs</span><br><span class="line">	This function member will be the constructor for the previous class.</span><br><span class="line">	@copyright</span><br><span class="line">	Document some copyright information.</span><br><span class="line">	@default (synonyms: @defaultvalue)</span><br><span class="line">	Document the default value.</span><br><span class="line">	@deprecated</span><br><span class="line">	Document that this is no longer the preferred way.</span><br><span class="line">	@description (synonyms: @desc)</span><br><span class="line">	Describe a symbol.</span><br><span class="line">	@enum</span><br><span class="line">	Document a collection of related properties.</span><br><span class="line">	@event</span><br><span class="line">	Document an event.</span><br><span class="line">	@example</span><br><span class="line">	Provide an example of how to use a documented item.</span><br><span class="line">	@exports</span><br><span class="line">	Identify the member that is exported by a JavaScript module.</span><br><span class="line">	@external (synonyms: @host)</span><br><span class="line">	Document an external class/namespace/module.</span><br><span class="line">	@file (synonyms: @fileoverview, @overview)</span><br><span class="line">	Describe a file.</span><br><span class="line">	@fires (synonyms: @emits)</span><br><span class="line">	Describe the events this method may fire.</span><br><span class="line">	@function (synonyms: @func, @method)</span><br><span class="line">	Describe a function or method.</span><br><span class="line">	@global</span><br><span class="line">	Document a global object.</span><br><span class="line">	@ignore</span><br><span class="line">	Omit a symbol from the documentation.</span><br><span class="line">	@inner</span><br><span class="line">	Document an inner object.</span><br><span class="line">	@instance</span><br><span class="line">	Document an instance member.</span><br><span class="line">	@kind</span><br><span class="line">	What kind of symbol is this?</span><br><span class="line">	@lends</span><br><span class="line">	Document properties on an object literal as if they belonged to a symbol with a given name.</span><br><span class="line">	@license</span><br><span class="line">	Identify the license that applies to this code.</span><br><span class="line">	@link</span><br><span class="line">	Inline tag - create a link.</span><br><span class="line">	@member (synonyms: @var)</span><br><span class="line">	Document a member.</span><br><span class="line">	@memberof</span><br><span class="line">	This symbol belongs to a parent symbol.</span><br><span class="line">	@mixes</span><br><span class="line">	This object mixes in all the members from another object.</span><br><span class="line">	@mixin</span><br><span class="line">	Document a mixin object.</span><br><span class="line">	@module</span><br><span class="line">	Document a JavaScript module.</span><br><span class="line">	@name</span><br><span class="line">	Document the name of an object.</span><br><span class="line">	@namespace</span><br><span class="line">	Document a namespace object.</span><br><span class="line">	@param (synonyms: @arg, @argument)</span><br><span class="line">	Document the parameter to a function.</span><br><span class="line">	@private</span><br><span class="line">	This symbol is meant to be private.</span><br><span class="line">	@property (synonyms: @prop)</span><br><span class="line">	Document a property of an object.</span><br><span class="line">	@protected</span><br><span class="line">	This member is meant to be protected.</span><br><span class="line">	@public</span><br><span class="line">	This symbol is meant to be public.</span><br><span class="line">	@readonly</span><br><span class="line">	This symbol is meant to be read-only.</span><br><span class="line">	@requires</span><br><span class="line">	This file requires a JavaScript module.</span><br><span class="line">	@returns (synonyms: @return)</span><br><span class="line">	Document the return value of a function.</span><br><span class="line">	@see</span><br><span class="line">	Refer to some other documentation for more information.</span><br><span class="line">	@since</span><br><span class="line">	When was this feature added?</span><br><span class="line">	@static</span><br><span class="line">	Document a static member.</span><br><span class="line">	@summary</span><br><span class="line">	A shorter version of the full description.</span><br><span class="line">	@this</span><br><span class="line">	What does the 'this' keyword refer to here?</span><br><span class="line">	@throws (synonyms: @exception)</span><br><span class="line">	Describe what errors could be thrown.</span><br><span class="line">	@todo</span><br><span class="line">	Document tasks to be completed.</span><br><span class="line">	@tutorial</span><br><span class="line">	Insert a link to an included tutorial file.</span><br><span class="line">	@type</span><br><span class="line">	Document the type of an object.</span><br><span class="line">	@typedef</span><br><span class="line">	Document a custom type.</span><br><span class="line">	@variation</span><br><span class="line">	Distinguish different objects with the same name.</span><br><span class="line">	@version</span><br><span class="line">	Documents the version number of an item.	 </span><br><span class="line"> **/</span></span><br></pre></td></tr></table></figure>
+<h3 id="u793A_u4F8Bjs"><a href="#u793A_u4F8Bjs" class="headerlink" title="示例js"></a>示例js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//示例一</span></span><br><span class="line"><span class="comment">/** </span><br><span class="line"> * @namespace 简单的方法标注示例 </span><br><span class="line"> * @author &lt;llying@javaeye.com&gt;</span><br><span class="line"> * @version 0.1 </span><br><span class="line"> */</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span><br><span class="line"> * @description 加法运算 </span><br><span class="line"> * @param &#123;number&#125; num1 加数 </span><br><span class="line"> * @param &#123;number&#125; num2 被加数 </span><br><span class="line"> * @return &#123;number&#125; result 结果 </span><br><span class="line"> */</span> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num1,num2</span>)</span>&#123; </span><br><span class="line">	<span class="keyword">return</span> num1 + num2; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span><br><span class="line"> * @description 减法运算 </span><br><span class="line"> * @param &#123;Num&#125; num1 减数 </span><br><span class="line"> * @param &#123;Num&#125; num2 被减数 </span><br><span class="line"> * @return &#123;Num&#125; result 结果 </span><br><span class="line"> */</span> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">minus</span>(<span class="params">num1,num2</span>)</span>&#123; </span><br><span class="line">  <span class="keyword">return</span> num1 - num2; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">//示例二</span></span><br><span class="line"><span class="comment">/** </span><br><span class="line"> * @class 简单的类对象标注示例 </span><br><span class="line"> * @author &lt;llying@javaeye.com&gt; </span><br><span class="line"> * @version 0.1 </span><br><span class="line"> */</span> </span><br><span class="line"><span class="comment">/** </span><br><span class="line"> * @author &lt;llying@javaeye.com&gt; </span><br><span class="line"> * @constructor Person </span><br><span class="line"> * @description 一个Person类 </span><br><span class="line"> * @see The &lt;a href="#"&gt;llying&lt;/a &gt;. </span><br><span class="line"> * @example new Parent(“张三”,15); </span><br><span class="line"> * @since version 0.1 </span><br><span class="line"> * @param &#123;String&#125; username 姓名 </span><br><span class="line"> * @param &#123;Num&#125; age 年龄 </span><br><span class="line"> */</span> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">username,age</span>) </span><br><span class="line"></span>&#123; </span><br><span class="line"><span class="comment">/** </span><br><span class="line"> * @description &#123;Sting&#125; 姓名 </span><br><span class="line">	 * @field </span><br><span class="line"> */</span> </span><br><span class="line">	<span class="keyword">this</span>.username = username; </span><br><span class="line"><span class="comment">/** </span><br><span class="line"> * @description &#123;Num&#125; 年龄 </span><br><span class="line"> * @field </span><br><span class="line"> */</span> </span><br><span class="line">	<span class="keyword">this</span>.age = age </span><br><span class="line"><span class="comment">/** </span><br><span class="line"> * @description 弹出say内容 </span><br><span class="line"> * @param &#123;String&#125; content 内容 </span><br><span class="line"> */</span> </span><br><span class="line">	<span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params">content</span>) </span><br><span class="line">	</span>&#123; </span><br><span class="line">		alert(<span class="keyword">this</span>.username+<span class="string">" say :"</span>+content); </span><br><span class="line">	&#125; </span><br><span class="line"><span class="comment">/** </span><br><span class="line"> * @description 返回json格式的对象 </span><br><span class="line"> * @return &#123;String&#125; json格式 </span><br><span class="line"> * @see Person#say </span><br><span class="line"> */</span> </span><br><span class="line">	<span class="keyword">this</span>.getJson = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">		<span class="keyword">return</span> <span class="string">"&#123;name:"</span>+<span class="keyword">this</span>.username+<span class="string">",age"</span>+<span class="keyword">this</span>.age+<span class="string">"&#125;"</span>; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u4E0B_u8F7D_u5B89_u88C5"><a href="#u4E0B_u8F7D_u5B89_u88C5" class="headerlink" title="下载安装"></a>下载安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g jsdoc</span><br></pre></td></tr></table></figure>
+<p>github项目地址:<a href="https://github.com/jsdoc3/jsdoc" target="_blank" rel="external">https://github.com/jsdoc3/jsdoc</a><br>jsdoc官网: <a href="http://usejsdoc.org/" target="_blank" rel="external">http://usejsdoc.org/</a><br>google项目地址:<a href="http://code.google.com/p/jsdoc-toolkit-ant-task/" target="_blank" rel="external">http://code.google.com/p/jsdoc-toolkit-ant-task/</a> (经常被墙，无法访问，也是没办法，只好用这个nodejs版了)</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/12/18/programmer/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          面对新语言和跳槽，程序员如何保持技术优势？
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/16/keep/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">信念</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="jsdoc" data-title="jsdoc使用说明文档" data-url="http://farmanyu.github.io/2014/12/16/jsdoc/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Farman
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
