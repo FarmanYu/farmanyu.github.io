@@ -175,6 +175,67 @@
 
       <div class="body-wrap">
   
+    <article id="post-work" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/08/01/work/" class="article-date">
+  	<time datetime="2014-07-31T16:00:00.000Z" itemprop="datePublished">2014-08-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/01/work/">工作博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天给部门添加了一个部门博客，决心要改变要从自己开始。要做技术，这样的事情还是得自己来。</p>
+<p><a href="http://ctripcruise.github.io/" target="_blank" rel="external">博客地址</a></p>
+<blockquote>
+<p>种下一棵种子，用心呵护，盼望秋天有所收获</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-rain" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -753,78 +814,6 @@ setInterval(<span class="function"><span class="keyword">function</span>(<span c
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-child_process_single" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/05/16/child_process_single/" class="article-date">
-  	<time datetime="2014-05-15T16:00:00.000Z" itemprop="datePublished">2014-05-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/05/16/child_process_single/">Node.js中的child_process及进程通信</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>child_process是Node.js的一個十分重要的模塊，通過它可以實現創建多進程，以利用多核計算資源。  </p>
-<p>Node.js 0.8的child_process模塊提供了四個創建子進程的函數，分別是spawn，exec，execFile和fork。其中spawn是最原始的創建子進程的函數，其他三個都是對spawn不同程度的封裝。spawn只能運行指定的程序，參數需要在列表中給出，相當於execvp系統函數，而exec可以直接運行複雜的命令。  </p>
-<p>例如要運行ls -lh /usr，使用spawn需要寫成spawn(‘ls’, [‘-lh’, ‘/usr’])，而exec只需exec(‘ls -lh /usr’)。exec的實現原理是啓動了一個系統shell來解析參數，因此可以是非常複雜的命令，包括管道和重定向。此外，exec還可以直接接受一個回調函數作爲參數，回調函數有三個參數，分別是err, stdout, stderr，非常方便直接使用，例如：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">child_process.exec(<span class="string">'ls -lh /usr'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, stdout, stderr</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(stdout);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>如果使用spawn，則必須寫成：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> child = child_process.spawn(<span class="string">'ls'</span>, [<span class="string">'-lh'</span>, <span class="string">'/usr'</span>]);</span><br><span class="line">child.stdout.setEncoding(<span class="string">'utf8'</span>);</span><br><span class="line">child.stdout.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>execFile與spawn的參數相似，也需要分別指定執行的命令和參數，但可以接受一個回調函數，與exec的回調函數相同。它與exec的區別在於不啓動獨立的shell，因此相比更加輕量級。  </p>
-<p>fork函數用於直接運行Node.js模塊，例如fork(‘./child.js’)，相當於spawn(‘node’, [‘./child.js’])。與默認的spawn不同的是，fork會在父進程與子進程直接建立一個IPC管道，用於父子進程之間的通信。例如：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = child_process.fork(<span class="string">'./child.js'</span>);</span><br><span class="line">n.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">m</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'PARENT got message:'</span>, m);</span><br><span class="line">&#125;);</span><br><span class="line">n.send(&#123; hello: <span class="string">'world'</span> &#125;);</span><br></pre></td></tr></table></figure>
-<p>child.js的內容  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">process.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">m</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'CHILD got message:'</span>, m);</span><br><span class="line">&#125;);</span><br><span class="line">process.send(&#123; foo: <span class="string">'bar'</span> &#125;);</span><br></pre></td></tr></table></figure>
-<p>其中父進程調用fork函數獲取一個返回值，作爲子進程的句柄，通過send函數發送信息，on(‘message’)監聽返回的信息，子進程通過內置的process對象相同的方法與父進程通信。   </p>
-<p>fork函數有一個問題，就是它只能運行JavaScript代碼，如果你喜歡用CoffeeScript（或者其他任何編譯到js的語言），是無法通過fork調用的。一個簡單的方法是把代碼編譯到JavaScript再運行，但是很不方便，有沒有什麼辦法呢？   </p>
-<p>答案是可以的，還是得回到spawn函數。spawn函數除了接受command, args外，還接受一個options參數。通過把options參數的stdio設爲[‘ipc’]，即可在父子進程之間建立IPC管道。例如子進程使用CoffeeScript：  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">child_process = <span class="built_in">require</span>(<span class="string">'child_process'</span>)</span><br><span class="line">options =</span><br><span class="line">  stdio: [<span class="string">'ipc'</span>]</span><br><span class="line">child = child_process.spawn <span class="string">'coffee'</span>, [<span class="string">'./child.coffee'</span>], options</span><br></pre></td></tr></table></figure>
-<p>其中只要把spawn的第一個參數設置爲運行對應腳本的解釋器，即可運行，例如使用Continuation.js，只需child = child_process.spawn(‘continuation’, [‘./child.coffee’], options)。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/child-process/">child_process</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
 	</div>
 
       
