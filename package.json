@@ -5,6 +5,9 @@
   "hexo": {
     "version": "3.1.1"
   },
+  "scripts":{
+    "deploy": "sh ./deploy.sh"
+  },
   "dependencies": {
     "hexo": "^3.1.0",
     "hexo-generator-archive": "^0.1.2",
