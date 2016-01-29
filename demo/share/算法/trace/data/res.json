@@ -1,0 +1,11 @@
+{
+  "image":
+	[		  
+	   {"name":"player","src":"../../imgs/p1.png"},
+	   {"name":"b1","src":"../../imgs/bul0.png"}
+	], 
+  "frame":         
+	[
+	  {"name":"sprite","src":"data/sprite_frames.json"}
+	]
+}

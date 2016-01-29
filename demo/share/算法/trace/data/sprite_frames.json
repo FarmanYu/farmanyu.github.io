@@ -1,0 +1,10 @@
+{			           
+	"player":{
+	  "type":0,
+	  "img":"player"
+	},	
+	"b1":{
+	  "type":0,
+	  "img":"b1"
+	}
+}

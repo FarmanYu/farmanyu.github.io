@@ -1,0 +1,20 @@
+{
+  "image":
+	[		  
+	   {"name":"pig","src":"imgs/pig.png"},
+	   {"name":"bird","src":"imgs/bird.png"},
+	   {"name":"bk1","src":"imgs/bk1.png"},
+	   {"name":"bk2","src":"imgs/bk2.png"},
+	   {"name":"bk3","src":"imgs/bk3.png"},
+	   {"name":"sshort","src":"imgs/dg.png"},
+	   {"name":"boom","src":"imgs/boom.png"},
+	   {"name":"boom1","src":"imgs/boom1.png"},
+	   {"name":"boom2","src":"imgs/boom2.png"},
+	   {"name":"boom3","src":"imgs/boom3.png"},
+           {"name":"cd","src":"imgs/cd.png"}
+	], 
+  "frame":         
+	[
+	  {"name":"sprite","src":"data/sprite_frames.json"}
+	]
+}

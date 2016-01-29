@@ -1,0 +1,20 @@
+{
+  "image":
+	[		  
+	   {"name":"bar1","src":"../../imgs/bar1.png"},       
+	   {"name":"bul0","src":"../../imgs/bul0.png"},
+	   {"name":"bul1","src":"../../imgs/bul1.png"},
+	   {"name":"bk1","src":"../../imgs/bk1.png"},
+	   {"name":"bk2","src":"../../imgs/bk2.png"},
+	   {"name":"ant","src":"../../imgs/ant.png"},
+	   {"name":"hole","src":"../../imgs/hole.png"},
+	   {"name":"water","src":"../../imgs/water.png"},
+	   {"name":"food","src":"../../imgs/food.png"},
+	   {"name":"nest","src":"../../imgs/nest.png"},
+	   {"name":"poison","src":"../../imgs/poison.png"}
+	], 
+  "frame":         
+	[
+	  {"name":"sprite","src":"data/sprite_frames.json"}
+	]
+}

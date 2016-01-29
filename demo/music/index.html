@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta content="application/xhtml+xml; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="no-cache" http-equiv="Cache-control"/>
+<title>音乐播放器 1.0(wise-ns)</title>
+<link rel="stylesheet" href="css/home.css" /> 
+</head>
+<body>
+<div class="wrapper">
+	<div class="mainBox">
+		<div class="play-info font1 clearfix">
+        	<div class="tl">格式：<span>MP3</span></div>
+            <div class="tr">时间：<span>03:50</span></div>
+        </div>
+        
+		<div class="music-info font1">
+            <div class="music-pic">
+            	<div class="left-item"><img src="images/3.jpg" width="140" height="140" /></div>
+                <div class="act-item"><img src="images/1.jpg" width="150" height="150" /></div>
+                <div class="right-item"><img src="images/2.jpg" width="140" height="140" /></div>
+            </div>
+            <p class="music-name">正在播放：<span>王菲-传奇</span></p>
+        </div>
+        
+		<div id="player"><canvas></canvas></div>
+        
+        <div class="play-action clearfix">
+			<div class="play-act-content-bg">
+				<div class="play-main" id="play-main" style="width:180px;">  </div>
+			</div>
+            <div class="playtime font1" id="playtime">00:00</div>
+		</div>
+        
+        <div class="play-nav">
+        	<div class="play-nav-bg clearfix">
+				<a class="restart" href="javascript:;" title="重新开始"></a>
+				<a class="prev" href="javascript:;" title="上一首"></a>
+				<a class="play" id="play" href="javascript:;" title="播放"></a>
+				<a class="next" href="javascript:;" title="下一首"></a>
+			</div>
+        </div>
+        <div class="playbar clearfix">
+        	<div class="voiceContent clearfix">
+            	<div class="voiceToDown"></div>
+                <div class="soundbg">
+                    <div class="soundact"></div>
+                </div>
+                <div class="voiceToUp"></div>
+            </div>
+            <div class="musiclist" id="musiclist"><span>音乐列表</span></div>
+        </div>
+	</div>
+</div>
+<script type="text/javascript" src="script/loader.js"></script>
+<script type="text/javascript" src="script/canvas.js"></script>
+<script type="text/javascript" src="script/tangram.js"></script>
+</body>
+</html>
