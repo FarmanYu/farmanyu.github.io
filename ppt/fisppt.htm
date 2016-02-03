@@ -1,0 +1,234 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.4.1
+    site: https://github.com/ksky521/nodePPT
+    date: 
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FIS前端解决方案分享 - By 余鸿飞&lt;yuhongfei@hupu.com&gt;</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    
+<link rel="stylesheet" href="./css/theme.moon.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><article class="flexbox vleft">
+<h1>FIS在Arena的项目实践</h1>
+<h4>部门：arena-研发部</h4>
+<h4>演讲者：余鸿飞<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#121;&#117;&#104;&#x6f;&#110;&#x67;&#102;&#x65;&#x69;&#64;&#104;&#x75;&#x70;&#x75;&#46;&#x63;&#x6f;&#109;" target="_blank">&#121;&#117;&#104;&#x6f;&#110;&#x67;&#102;&#x65;&#x69;&#64;&#104;&#x75;&#x70;&#x75;&#46;&#x63;&#x6f;&#109;</a></h4>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h1>演讲大纲</h1>
+
+</hgroup><article>
+
+<ul>
+<li>前端那些事</li>
+<li>前端到底需要什么样的框架</li>
+<li>FIS如何定义前端框架</li>
+<li>FIS在Arena的项目实践</li>
+<li>前端框架的未来</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>前端那些事</h1>
+<ul class="fadeIn">
+<li>入门简单 (人人都会写前端)</li>
+<li>前端框架繁多 (jquery, zepto, angularjs, react, backbone, yui, ember等)</li>
+<li>多人开发 (多平台，多人协作)</li>
+<li>性能优化 (前端噩梦)</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>前端到底需要什么样的框架</h1>
+<ul class="fadeIn">
+<li>组件复用</li>
+<li>本地调试</li>
+<li>性能优化</li>
+<li>跨平台</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article>
+<h2>组件复用</h2>
+<blockquote>
+<p>前端需要组件，组件复用可以提高效率，提高代码的复用，也可以有效的减少BUG的产生<br>一言蔽之，我们希望已经做过的东西可以更容易被复用</p>
+</blockquote>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article>
+<h2>本地调试</h2>
+<blockquote>
+<p>前后端解耦，多人开发，前端需要独挡一面，不依赖接口开发，可以自己mock独立开发<br>可以快速定位前后端问题，到底是数据问题还是页面问题</p>
+</blockquote>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article>
+<h2>性能优化</h2>
+<blockquote>
+<p>前端天生缺乏资源定位能力，各种打包工具，不是把资源硬编码在代码里，就是硬编码在打包工具里<br>不用自己去做资源管理和性能优化，一键自动达到性能最优方案</p>
+</blockquote>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article>
+<h2>跨平台</h2>
+<blockquote>
+<p>MAC, Windows, Linux那么多开发平台，我们需要把我们的框架运行在各种平台，满足不同开发平台需要<br>html之所以流行就是因为他可以随意跨平台，那么我们的框架也需要.</p>
+</blockquote>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article>
+<h2>FIS如何定义前端框架</h2>
+<ul class="fadeIn">
+<li>组件化 widget</li>
+<li>本地调试 (local-server, mock)</li>
+<li>跨平台 (node-commender)</li>
+<li>资源管理 (resource-map)</li>
+<li>远程调试 (deploy)</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>FIS的使用</h2>
+<ul class="fadeIn">
+<li>三条命令<ul>
+<li>fis install</li>
+<li>fis release</li>
+<li>fis server</li>
+</ul>
+</li>
+<li>解决方案 fisp <a href="http://fis.baidu.com/docs/beginning/getting-started.html" target="_blank">快速入门</a></li>
+</ul>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>FIS在Arena的项目实践</h1>
+<blockquote>
+<p>5月M站的尝试接入<br>9月虎扑体育的Hybrid接入</p>
+</blockquote>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>FIS在Arena的项目实践</h1>
+<ul>
+<li>框架组件高度复用</li>
+<li>学习零成本</li>
+<li>4个人支持多个产品线的业务开发</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>FIS框架接入前后，前端工作的对比</h1>
+<ul class="fadeIn">
+<li>FIS前<ul>
+<li>前端写静态页面</li>
+<li>服务端包装部分模板</li>
+<li>前端资源打包</li>
+<li>前后端耦合很深</li>
+</ul>
+</li>
+<li>FIS后<ul>
+<li>前端自己封装模板和组件，高度复用</li>
+<li>前后端解耦</li>
+<li>后端不用关心模板逻辑</li>
+<li>前端自己资源管理打包</li>
+</ul>
+</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>前端框架的未来</h1>
+<ul class="fadeIn">
+<li>更为易用的打包方案</li>
+<li>更多语言的解决方案</li>
+<li>更庞大的开源社区和更多组件支持</li>
+<li>更多业务场景的实现</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide" data-transition="vertical3d"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>谢谢大家</h1>
+<h1>Q &amp; A</h1>
+
+</article></section></slide>
+        
+
+        <!-- <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+                <h2 style="color: white;">Powered By nodePPT v1.4.1</h2>
+            </article>
+        </slide> -->
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = (location.pathname + '#').split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'move',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/highlight.pack.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+
+
+<!--placeholder-->
+</body>
+</html>
