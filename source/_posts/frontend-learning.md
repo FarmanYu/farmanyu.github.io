@@ -1,6 +1,6 @@
 title: 前端工程师的学习规划
 date: 2016-03-14 09:32:16
-tags: [frontend, js, node]
+tags: [frontend, js, node, html, css3]
 ---
 
 # 背景
@@ -36,6 +36,14 @@ tags: [frontend, js, node]
 * 了解CSS动画和JS相结合的框架
 * 掌握前端动画技巧，熟悉动画原理，知道常用的JS/CSS动画库，了解各类动画库原理并使用
 * 掌握sass,less,stylus等css构建语言，并会使用
+
+### HTML
+* **了解HTML语意化，并知道在合适的位置正确使用**
+* 了解HTML5新的标签和新特性
+* 掌握canvas绘图
+* 掌握localStorage本地数据存储
+* 掌握HTML5多媒体标签的使用(audio、video)
+* 掌握各类标签属性的含义
 
 ### 流程构建工具
 * 了解前端为什么需要流程构建工具，要解决的问题是什么
@@ -84,18 +92,19 @@ tags: [frontend, js, node]
 * 了解前端的前沿技术，会搭建简单demo并运行，会比较各类工具优势劣势，以及使用场景
 
 ### 合作开发
-* 了解开发过程中代码流向，由本地电脑->开发服务器->测试服务器->预发布服务器->线上服务器.
+* 了解开发过程中代码流向，由 本地电脑 -> 开发服务器 -> 测试服务器 -> 预发布服务器 -> 线上服务器.
+* **掌握浏览器cookie的读写，了解http-only的含义**
 * **熟悉前后端调试的原理，知道怎么和后端程序员进行调试，知道熟悉怎么本地mock**
 * **熟悉整个项目的发布部署原理，知道本地代码和编译后代码的区别.**
 * 了解CDN原理，指导CDN的带来的好处和弊端，会发布代码到CDN.
 
 ### 语言扩展
 * 熟练使用 [es6](https://babeljs.io/docs/learn-es2015/) 语法，掌握es6语法带来的代码变化
-* 了解flash代码
+* 了解flash语法以及编写
 * 了解php\python\java语法，会使用编写简单功能
 * 更深入其他语言语法.
 
 ## 前端书籍推荐
-参考如下链接: 
+参考如下链接:
 > [知乎大神的整理](https://www.zhihu.com/question/19809484)   
 > [github上其他人整理](https://github.com/lisposter/frontend-books)
