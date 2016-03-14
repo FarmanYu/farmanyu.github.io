@@ -10,8 +10,8 @@ tags: [frontend, js, node]
 加粗的需要重点掌握
 
 ### 原生JS
-* **了解JS中的各种对象的含义 Array、 String、Number、 RegExp、Function、Object、NULL、undefined、NaN**
-* **了解JS中的各种运算符**
+* **了解JS中的各种对象的含义 (Array、 String、Number、 RegExp、Function、Object、NULL、undefined、NaN)**
+* **了解JS中的各种运算符 (+、-、/、*、~、!、|、||、&、&&、%、[]、{}、=、>、<)**
 * **熟悉并学会使用 Array、 String、Number、 RegExp、Function、Object 的原生方法**
 * **掌握JS Dom相关API,（增、删、替换、复制等）**
 * 掌握JS对象的简单克隆和深度克隆
