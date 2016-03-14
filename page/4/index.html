@@ -107,7 +107,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/child-process/" style="font-size: 10px;">child_process</a> <a href="/tags/frontend/" style="font-size: 16.67px;">frontend</a> <a href="/tags/game/" style="font-size: 11.67px;">game</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html5/" style="font-size: 13.33px;">html5</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/node/" style="font-size: 13.33px;">node</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/soft/" style="font-size: 10px;">soft</a> <a href="/tags/tools/" style="font-size: 18.33px;">tools</a>
+						<a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/child-process/" style="font-size: 10px;">child_process</a> <a href="/tags/frontend/" style="font-size: 17.14px;">frontend</a> <a href="/tags/game/" style="font-size: 11.43px;">game</a> <a href="/tags/git/" style="font-size: 12.86px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html5/" style="font-size: 12.86px;">html5</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/js/" style="font-size: 15.71px;">js</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/node/" style="font-size: 14.29px;">node</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/soft/" style="font-size: 10px;">soft</a> <a href="/tags/tools/" style="font-size: 18.57px;">tools</a>
 					</div>
 				</section>
 				
@@ -174,6 +174,65 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-daemon" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/05/18/daemon/" class="article-date">
+  	<time datetime="2014-05-17T16:00:00.000Z" itemprop="datePublished">2014-05-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/18/daemon/">nodejs写自己的守护进程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>起初我也是使用网上流行的forever来尝试，发现控制forever挺麻烦的，特别是多个nodejs节点的时候，总是提示.forever文件已经存在，需要使用-a或者–append来处理，然后实际上有时候进程死了它并不知晓  </p>
+<p>后来就写了个简单的守护进程，用主进程来启动子进程，如果子进程死了就重启子进程，还有优化的余地，比如如何停止所有的节点的问题，这个用别的shell来处理了，这里只是贴出守护进程的代码  </p>
+<p>也说说写这个守护进程的目的，起来正常来说，如果容错写的够好是不需要守护进程的，但是我之前发现有个问题，mysql在运行一定时间之后，会断开所有的连接，导致nodejs读取mysql的连接中断，这时候nodejs就会挂掉，使用连接池连接mysql的话，虽然nodejs不会挂掉，但是连接池实际上属于无用状态，也读取不到mysql的数据，导致请求会阻塞，浏览器一直无法响应  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> spawn = <span class="built_in">require</span>(<span class="string">'child_process'</span>).spawn,</span><br><span class="line">  	server = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startServer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'start server'</span>);</span><br><span class="line">    server = spawn(<span class="string">'node'</span>,[<span class="string">'app.js'</span>]);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'node js pid is '</span>+server.pid);</span><br><span class="line">    server.on(<span class="string">'close'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">code,signal</span>)</span>&#123;</span><br><span class="line">        server.kill(signal);</span><br><span class="line">        server = startServer();</span><br><span class="line">    &#125;);</span><br><span class="line">    server.on(<span class="string">'error'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">code,signal</span>)</span>&#123;</span><br><span class="line">        server.kill(signal);</span><br><span class="line">        server = startServer();</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> server;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">startServer();</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-child_server" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -316,73 +375,6 @@ setInterval(<span class="function"><span class="keyword">function</span>(<span c
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/child-process/">child_process</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-curl" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/05/15/curl/" class="article-date">
-  	<time datetime="2014-05-14T16:00:00.000Z" itemprop="datePublished">2014-05-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/05/15/curl/">PHP模拟登录并获取数据</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>cURL 是一个功能强大的PHP库，使用PHP的cURL库可以简单和有效地抓取网页并采集内容，设置cookie完成模拟登录网页，curl提供了丰富的函数，开发者可以从PHP手册中获取更多关于cURL信息。本文以模拟登录开源中国(oschina)为例，和大家分享cURL的使用。<br>PHP的curl()在抓取网页的效率方面是比较高的，而且支持多线程，而file_get_contents()效率就要稍低些，当然，使用curl时需要开启下curl扩展。  </p>
-<p><em>代码实战</em><br>先来看登录部分的代码：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模拟登录 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login_post</span><span class="params">(<span class="variable">$url</span>, <span class="variable">$cookie</span>, <span class="variable">$post</span>)</span> </span>&#123; </span><br><span class="line">    <span class="variable">$curl</span> = curl_init();<span class="comment">//初始化curl模块 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_URL, <span class="variable">$url</span>);<span class="comment">//登录提交的地址 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_HEADER, <span class="number">0</span>);<span class="comment">//是否显示头信息 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_RETURNTRANSFER, <span class="number">0</span>);<span class="comment">//是否自动显示返回的信息 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_COOKIEJAR, <span class="variable">$cookie</span>); <span class="comment">//设置Cookie信息保存在指定的文件中 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_POST, <span class="number">1</span>);<span class="comment">//post方式提交 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_POSTFIELDS, http_build_query(<span class="variable">$post</span>));<span class="comment">//要提交的信息 </span></span><br><span class="line">    curl_exec(<span class="variable">$curl</span>);<span class="comment">//执行cURL </span></span><br><span class="line">    curl_close(<span class="variable">$curl</span>);<span class="comment">//关闭cURL资源，并且释放系统资源 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>函数login_post()首先初始化curl_init()，然后使用curl_setopt()设置相关选项信息，包括要提交的url地址，保存的cookie文件，post的数据（用户名和密码等信息），是否返回信息等等，然后curl_exec执行curl，最后curl_close()释放资源。注意PHP自带的http_build_query()可以将数组转换成相连接的字符串。<br>接下来如果登录成功后，我们要获取登录成功后的页面信息。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//登录成功后获取数据 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_content</span><span class="params">(<span class="variable">$url</span>, <span class="variable">$cookie</span>)</span> </span>&#123; </span><br><span class="line">    <span class="variable">$ch</span> = curl_init(); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_URL, <span class="variable">$url</span>); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_HEADER, <span class="number">0</span>); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_RETURNTRANSFER, <span class="number">1</span>); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_COOKIEFILE, <span class="variable">$cookie</span>); <span class="comment">//读取cookie </span></span><br><span class="line">    <span class="variable">$rs</span> = curl_exec(<span class="variable">$ch</span>); <span class="comment">//执行cURL抓取页面内容 </span></span><br><span class="line">    curl_close(<span class="variable">$ch</span>); </span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$rs</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>函数get_content()中也是先初始化curl，然后设置相关选项，执行curl，释放资源。其中我们设置CURLOPT_RETURNTRANSFER为1即自动返回信息，而CURLOPT_COOKIEFILE可以读取到登录时保存的cookie信息，最后将页面内容返回。<br>我们的最终目的是要获取到模拟登录后的信息，也就是只有正常登录成功后才能获取的有用信息。接下来我们以登录开源中国的移动版为例，看看如何抓取到登录成功后的信息。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置post的数据 </span></span><br><span class="line"><span class="variable">$post</span> = <span class="keyword">array</span> ( </span><br><span class="line">    <span class="string">'email'</span> =&gt; <span class="string">'oschina账户'</span>, </span><br><span class="line">    <span class="string">'pwd'</span> =&gt; <span class="string">'oschina密码'</span>, </span><br><span class="line">    <span class="string">'goto_page'</span> =&gt; <span class="string">'/my'</span>, </span><br><span class="line">    <span class="string">'error_page'</span> =&gt; <span class="string">'/login'</span>, </span><br><span class="line">    <span class="string">'save_login'</span> =&gt; <span class="string">'1'</span>, </span><br><span class="line">    <span class="string">'submit'</span> =&gt; <span class="string">'现在登录'</span> </span><br><span class="line">); </span><br><span class="line"> </span><br><span class="line"><span class="comment">//登录地址 </span></span><br><span class="line"><span class="variable">$url</span> = <span class="string">"http://m.oschina.net/action/user/login"</span>; </span><br><span class="line"><span class="comment">//设置cookie保存路径 </span></span><br><span class="line"><span class="variable">$cookie</span> = dirname(<span class="keyword">__FILE__</span>) . <span class="string">'/cookie_oschina.txt'</span>; </span><br><span class="line"><span class="comment">//登录后要获取信息的地址 </span></span><br><span class="line"><span class="variable">$url2</span> = <span class="string">"http://m.oschina.net/my"</span>; </span><br><span class="line"><span class="comment">//模拟登录 </span></span><br><span class="line">login_post(<span class="variable">$url</span>, <span class="variable">$cookie</span>, <span class="variable">$post</span>); </span><br><span class="line"><span class="comment">//获取登录页的信息 </span></span><br><span class="line"><span class="variable">$content</span> = get_content(<span class="variable">$url2</span>, <span class="variable">$cookie</span>); </span><br><span class="line"><span class="comment">//删除cookie文件 </span></span><br><span class="line">@ unlink(<span class="variable">$cookie</span>); </span><br><span class="line"><span class="comment">//匹配页面信息 </span></span><br><span class="line"><span class="variable">$preg</span> = <span class="string">"/&lt;td class='portrait'&gt;(.*)&lt;\/td&gt;/i"</span>; </span><br><span class="line">preg_match_all(<span class="variable">$preg</span>, <span class="variable">$content</span>, <span class="variable">$arr</span>); </span><br><span class="line"><span class="variable">$str</span> = <span class="variable">$arr</span>[<span class="number">1</span>][<span class="number">0</span>]; </span><br><span class="line"><span class="comment">//输出内容 </span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$str</span>;</span><br></pre></td></tr></table></figure>
-<p>运行上述代码后，我们会看到最终获取到登录用户的头像图片。  </p>
-<p><em>使用总结</em><br>1、初始化curl；<br>2、使用curl_setopt设置目标url，和其他选项；<br>3、curl_exec，执行curl；<br>4、执行后，关闭curl；<br>5、输出数据。  </p>
-<p><em>参考文献</em><br>《curl简介及php中的curl》，作者不详，<a href="http://www.2cto.com/kf/201208/147091.html" target="_blank" rel="external">http://www.2cto.com/kf/201208/147091.html</a><br>《使用PHP CURL的POST数据》，作者：Veda，<a href="http://www.nowamagic.net/librarys/veda/detail/124" target="_blank" rel="external">http://www.nowamagic.net/librarys/veda/detail/124</a><br>《php 使用curl模拟登录discuz以及模拟发帖》，作者：tianxin，<a href="http://www.cnblogs.com/tianxin2001x/archive/2009/10/28/1591311.html" target="_blank" rel="external">http://www.cnblogs.com/tianxin2001x/archive/2009/10/28/1591311.html</a></p>
-<p>转载自<a href="http://www.helloweba.com/view-blog-253.html" target="_blank" rel="external">http://www.helloweba.com/view-blog-253.html</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
 	</div>
 
       
@@ -761,6 +753,73 @@ setInterval(<span class="function"><span class="keyword">function</span>(<span c
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-curl" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/05/15/curl/" class="article-date">
+  	<time datetime="2014-05-14T16:00:00.000Z" itemprop="datePublished">2014-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/15/curl/">PHP模拟登录并获取数据</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>cURL 是一个功能强大的PHP库，使用PHP的cURL库可以简单和有效地抓取网页并采集内容，设置cookie完成模拟登录网页，curl提供了丰富的函数，开发者可以从PHP手册中获取更多关于cURL信息。本文以模拟登录开源中国(oschina)为例，和大家分享cURL的使用。<br>PHP的curl()在抓取网页的效率方面是比较高的，而且支持多线程，而file_get_contents()效率就要稍低些，当然，使用curl时需要开启下curl扩展。  </p>
+<p><em>代码实战</em><br>先来看登录部分的代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模拟登录 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login_post</span><span class="params">(<span class="variable">$url</span>, <span class="variable">$cookie</span>, <span class="variable">$post</span>)</span> </span>&#123; </span><br><span class="line">    <span class="variable">$curl</span> = curl_init();<span class="comment">//初始化curl模块 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_URL, <span class="variable">$url</span>);<span class="comment">//登录提交的地址 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_HEADER, <span class="number">0</span>);<span class="comment">//是否显示头信息 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_RETURNTRANSFER, <span class="number">0</span>);<span class="comment">//是否自动显示返回的信息 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_COOKIEJAR, <span class="variable">$cookie</span>); <span class="comment">//设置Cookie信息保存在指定的文件中 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_POST, <span class="number">1</span>);<span class="comment">//post方式提交 </span></span><br><span class="line">    curl_setopt(<span class="variable">$curl</span>, CURLOPT_POSTFIELDS, http_build_query(<span class="variable">$post</span>));<span class="comment">//要提交的信息 </span></span><br><span class="line">    curl_exec(<span class="variable">$curl</span>);<span class="comment">//执行cURL </span></span><br><span class="line">    curl_close(<span class="variable">$curl</span>);<span class="comment">//关闭cURL资源，并且释放系统资源 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数login_post()首先初始化curl_init()，然后使用curl_setopt()设置相关选项信息，包括要提交的url地址，保存的cookie文件，post的数据（用户名和密码等信息），是否返回信息等等，然后curl_exec执行curl，最后curl_close()释放资源。注意PHP自带的http_build_query()可以将数组转换成相连接的字符串。<br>接下来如果登录成功后，我们要获取登录成功后的页面信息。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//登录成功后获取数据 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_content</span><span class="params">(<span class="variable">$url</span>, <span class="variable">$cookie</span>)</span> </span>&#123; </span><br><span class="line">    <span class="variable">$ch</span> = curl_init(); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_URL, <span class="variable">$url</span>); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_HEADER, <span class="number">0</span>); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_RETURNTRANSFER, <span class="number">1</span>); </span><br><span class="line">    curl_setopt(<span class="variable">$ch</span>, CURLOPT_COOKIEFILE, <span class="variable">$cookie</span>); <span class="comment">//读取cookie </span></span><br><span class="line">    <span class="variable">$rs</span> = curl_exec(<span class="variable">$ch</span>); <span class="comment">//执行cURL抓取页面内容 </span></span><br><span class="line">    curl_close(<span class="variable">$ch</span>); </span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$rs</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数get_content()中也是先初始化curl，然后设置相关选项，执行curl，释放资源。其中我们设置CURLOPT_RETURNTRANSFER为1即自动返回信息，而CURLOPT_COOKIEFILE可以读取到登录时保存的cookie信息，最后将页面内容返回。<br>我们的最终目的是要获取到模拟登录后的信息，也就是只有正常登录成功后才能获取的有用信息。接下来我们以登录开源中国的移动版为例，看看如何抓取到登录成功后的信息。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置post的数据 </span></span><br><span class="line"><span class="variable">$post</span> = <span class="keyword">array</span> ( </span><br><span class="line">    <span class="string">'email'</span> =&gt; <span class="string">'oschina账户'</span>, </span><br><span class="line">    <span class="string">'pwd'</span> =&gt; <span class="string">'oschina密码'</span>, </span><br><span class="line">    <span class="string">'goto_page'</span> =&gt; <span class="string">'/my'</span>, </span><br><span class="line">    <span class="string">'error_page'</span> =&gt; <span class="string">'/login'</span>, </span><br><span class="line">    <span class="string">'save_login'</span> =&gt; <span class="string">'1'</span>, </span><br><span class="line">    <span class="string">'submit'</span> =&gt; <span class="string">'现在登录'</span> </span><br><span class="line">); </span><br><span class="line"> </span><br><span class="line"><span class="comment">//登录地址 </span></span><br><span class="line"><span class="variable">$url</span> = <span class="string">"http://m.oschina.net/action/user/login"</span>; </span><br><span class="line"><span class="comment">//设置cookie保存路径 </span></span><br><span class="line"><span class="variable">$cookie</span> = dirname(<span class="keyword">__FILE__</span>) . <span class="string">'/cookie_oschina.txt'</span>; </span><br><span class="line"><span class="comment">//登录后要获取信息的地址 </span></span><br><span class="line"><span class="variable">$url2</span> = <span class="string">"http://m.oschina.net/my"</span>; </span><br><span class="line"><span class="comment">//模拟登录 </span></span><br><span class="line">login_post(<span class="variable">$url</span>, <span class="variable">$cookie</span>, <span class="variable">$post</span>); </span><br><span class="line"><span class="comment">//获取登录页的信息 </span></span><br><span class="line"><span class="variable">$content</span> = get_content(<span class="variable">$url2</span>, <span class="variable">$cookie</span>); </span><br><span class="line"><span class="comment">//删除cookie文件 </span></span><br><span class="line">@ unlink(<span class="variable">$cookie</span>); </span><br><span class="line"><span class="comment">//匹配页面信息 </span></span><br><span class="line"><span class="variable">$preg</span> = <span class="string">"/&lt;td class='portrait'&gt;(.*)&lt;\/td&gt;/i"</span>; </span><br><span class="line">preg_match_all(<span class="variable">$preg</span>, <span class="variable">$content</span>, <span class="variable">$arr</span>); </span><br><span class="line"><span class="variable">$str</span> = <span class="variable">$arr</span>[<span class="number">1</span>][<span class="number">0</span>]; </span><br><span class="line"><span class="comment">//输出内容 </span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$str</span>;</span><br></pre></td></tr></table></figure>
+<p>运行上述代码后，我们会看到最终获取到登录用户的头像图片。  </p>
+<p><em>使用总结</em><br>1、初始化curl；<br>2、使用curl_setopt设置目标url，和其他选项；<br>3、curl_exec，执行curl；<br>4、执行后，关闭curl；<br>5、输出数据。  </p>
+<p><em>参考文献</em><br>《curl简介及php中的curl》，作者不详，<a href="http://www.2cto.com/kf/201208/147091.html" target="_blank" rel="external">http://www.2cto.com/kf/201208/147091.html</a><br>《使用PHP CURL的POST数据》，作者：Veda，<a href="http://www.nowamagic.net/librarys/veda/detail/124" target="_blank" rel="external">http://www.nowamagic.net/librarys/veda/detail/124</a><br>《php 使用curl模拟登录discuz以及模拟发帖》，作者：tianxin，<a href="http://www.cnblogs.com/tianxin2001x/archive/2009/10/28/1591311.html" target="_blank" rel="external">http://www.cnblogs.com/tianxin2001x/archive/2009/10/28/1591311.html</a></p>
+<p>转载自<a href="http://www.helloweba.com/view-blog-253.html" target="_blank" rel="external">http://www.helloweba.com/view-blog-253.html</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
 	</div>
 
       

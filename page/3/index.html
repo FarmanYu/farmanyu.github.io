@@ -107,7 +107,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/child-process/" style="font-size: 10px;">child_process</a> <a href="/tags/frontend/" style="font-size: 16.67px;">frontend</a> <a href="/tags/game/" style="font-size: 11.67px;">game</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html5/" style="font-size: 13.33px;">html5</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/node/" style="font-size: 13.33px;">node</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/soft/" style="font-size: 10px;">soft</a> <a href="/tags/tools/" style="font-size: 18.33px;">tools</a>
+						<a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/child-process/" style="font-size: 10px;">child_process</a> <a href="/tags/frontend/" style="font-size: 17.14px;">frontend</a> <a href="/tags/game/" style="font-size: 11.43px;">game</a> <a href="/tags/git/" style="font-size: 12.86px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html5/" style="font-size: 12.86px;">html5</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/js/" style="font-size: 15.71px;">js</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/node/" style="font-size: 14.29px;">node</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/soft/" style="font-size: 10px;">soft</a> <a href="/tags/tools/" style="font-size: 18.57px;">tools</a>
 					</div>
 				</section>
 				
@@ -174,6 +174,131 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-10-tips-git-next-level" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/08/28/10-tips-git-next-level/" class="article-date">
+  	<time datetime="2014-08-27T16:00:00.000Z" itemprop="datePublished">2014-08-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/28/10-tips-git-next-level/">提升git的10个技巧</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近，我们发表了关于Git基础知识和在团队中使用Git的教程。我们之前讨论的那些命令，已经足够让帮助一个开发者在Git世界里生存了。本篇文章，我们将尝试探索如何更有效的管理您的时间以及如何充分使用Git提供的各种功能。  </p>
+<p>注意：本文中，一些命令包含含有方括号的部分(e.g.git add -p [file_name]).在这些例子中，您要在该处插入所需的数字，标示符等。而不需要保留方括号。  </p>
+<h2 id="1-Git_u81EA_u52A8_u8865_u5168"><a href="#1-Git_u81EA_u52A8_u8865_u5168" class="headerlink" title="1.Git自动补全"></a>1.Git自动补全</h2><p>如果你在命令行中使用Git命令，每次手动输入命令是一件非常烦人的。为了解决这个问题，你可以很方便的开启自动补全功能。  </p>
+<p>在Unix系统下，运行以下指令来获取脚本：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash</span><br></pre></td></tr></table></figure>
+<p>然后，在您的~/.bash_profile文件中添加以下代码：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="operator">-f</span> ~/.git-completion.bash ]; <span class="keyword">then</span></span><br><span class="line">    . ~/.git-completion.bash</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>尽管我之前就提到过，在这里我仍要不厌其烦的说：如果你想使用Git提供的全部功能，你肯定是需要转而使用命令行来操作的。  </p>
+<h2 id="2-_u5728Git_u4E2D_u5FFD_u7565_u6587_u4EF6"><a href="#2-_u5728Git_u4E2D_u5FFD_u7565_u6587_u4EF6" class="headerlink" title="2.在Git中忽略文件"></a>2.在Git中忽略文件</h2><p>你是否对出现在你Git仓库中的已编译文件（比如.pyc）感到厌烦？  </p>
+<p>亦或是你已经对把它们加入Git中这件事感到忍无可忍了？  </p>
+<p>眼下就有一个可以让Git忽略特定文件或是目录的方法。只需要简单的创建一个.gitignore文件，然后列出你不想让Git跟踪的文件和目录即可。你可以使用感叹号(!)来指出例外的情况。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*.pyc</span><br><span class="line">*.exe</span><br><span class="line">my_db_config/</span><br><span class="line"></span><br><span class="line">!main.pyc</span><br></pre></td></tr></table></figure>
+<h2 id="3-_u8C01_u52A8_u4E86_u6211_u7684_u4EE3_u7801_uFF1F"><a href="#3-_u8C01_u52A8_u4E86_u6211_u7684_u4EE3_u7801_uFF1F" class="headerlink" title="3.谁动了我的代码？"></a>3.谁动了我的代码？</h2><p>出了问题后去责怪别人，是人类的天性。如果你的成品服务器出了问题，你可以非常轻松的把坏人揪出来——只需要使用git blame命令。  </p>
+<p>这个命令会显示文件中每一行的作者，最后一次改动后进行的提交(commit)以及该次提交的时间戳。。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git blame [file_name]</span><br></pre></td></tr></table></figure>
+<p>下图中，你可以看到在一个大型仓库中使用该命令是什么样子的。  </p>
+<h2 id="4-_u56DE_u987E_u4ED3_u5E93_u5386_u53F2"><a href="#4-_u56DE_u987E_u4ED3_u5E93_u5386_u53F2" class="headerlink" title="4.回顾仓库历史"></a>4.回顾仓库历史</h2><p>在之前的教程中，我们了解了git log命令的用法，然而，它还有三个选项，你应该了解。  </p>
+<ul>
+<li>–oneline——把每次提交间显示的信息压缩成缩减的hash值和提交信息，在一行显示。</li>
+<li>–graph——该选项会在输出界面的左手边用一种基于文本的图形表示法来显示历史。如果你只是浏览一个单独分支的历史，那么这个功能是没有用的。</li>
+<li>–all——显示全部分支的历史<br>这里是以上命令综合使用的效果。  </li>
+</ul>
+<h2 id="5-_u7EDD_u4E0D_u4E22_u5931_u4E00_u4E2A_u63D0_u4EA4_u4FE1_u606F"><a href="#5-_u7EDD_u4E0D_u4E22_u5931_u4E00_u4E2A_u63D0_u4EA4_u4FE1_u606F" class="headerlink" title="5.绝不丢失一个提交信息"></a>5.绝不丢失一个提交信息</h2><p>比方说，你提交了一个你不想要提交的代码，最后你通过使用硬重置(hard reset)使其回到了之前的状态。稍后，你意识到，在这个过程中你丢失了一些其他的信息，并想要退回或是至少能看一眼。git reflog命令可以帮你做到这一点。  </p>
+<p>一个简单的git log命令，显示你最近的提交信息，以及上一次，再上一次的提交信息，以此类推。  </p>
+<p>而git reflog显示的是所有head移动的信息。记住，它是在本地的，而不是你仓库的一部分，不会包含在推送(push)和合并中(merge)。  </p>
+<p>如果我使用git log，我得到的提交信息是我的仓库的一部分。  </p>
+<p>然而git reflog显示了一个提交信息（b1b0ee9 – HEAD@{4}），这是我使用硬重置(hard reset)时丢失的那个。  </p>
+<h2 id="6-_u6682_u5B58_u4E00_u4E2A_u6587_u4EF6_u7684_u90E8_u5206_u6539_u52A8"><a href="#6-_u6682_u5B58_u4E00_u4E2A_u6587_u4EF6_u7684_u90E8_u5206_u6539_u52A8" class="headerlink" title="6.暂存一个文件的部分改动"></a>6.暂存一个文件的部分改动</h2><p>通常来讲，创建一个基于特性的提交是一个良好的做法，就是说，每次提交都必须代表一个新特性的产生或者是一个bug的修复。考虑一下，如果你修复了两个bug，或是添加了多个新特性但是却没有提交这些变化会怎样呢？在这种情况下，你可以把这些变化放在一次提交中。但是还有一个更好的方法：把文件分别暂存(Stage)然后分别提交。  </p>
+<p>比如说，你对一个文件进行了多次修改并且想把他们分别提交。这种情况下，你可以在添加命令(add)中加上-p选项  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add -p [file_name]</span><br></pre></td></tr></table></figure>
+<p>让我们演示一下。我在file_name文件中添加了3行文字，而且我只想提交第一行和第三行。我们先看一下git diff显示的结果。  </p>
+<p>然后，我们看一下，在添加命令(add)中加上-p选项后会发生什么。  </p>
+<p>看上去，Git假定所有的改变都是针对同一件事情的，因此它把这些都放在了一个块里。你有如下几个选项：  </p>
+<ul>
+<li>输入y来缓存该块</li>
+<li>输入n不缓存该块</li>
+<li>输入e来人工编辑该块</li>
+<li>输入d来退出或进入下一个文件</li>
+<li>输入s来分割这个块<br>对我们而言，我们肯定希望把它分成几个部分，有选择的添加一部分而忽略其他的。  </li>
+</ul>
+<p>正如你所看到的，我们添加了第一行和第三行而忽略了第二行。你可以在之后查看仓库状态并进行提交。  </p>
+<h2 id="7-_u5408_u5E76_u591A_u6B21_u63D0_u4EA4"><a href="#7-_u5408_u5E76_u591A_u6B21_u63D0_u4EA4" class="headerlink" title="7.合并多次提交"></a>7.合并多次提交</h2><p>当你提交你的代码进行审核并创建一个pull request时(在开源项目中常常发生这样的情况)，你经常会在代码被采纳前，要求修改一些代码。你进行了一些修改，而在下一次审核中，又会被要求进行另外的修改。你不知道还有多少次修改等着你，在你知道以前，你进行了多次额外的提交。理想的状态是，你可以使用rebase命令，把他们都合并成一次提交。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~[number_of_commits]</span><br></pre></td></tr></table></figure>
+<p>如果你希望合并最后两次提交，您需要以下命令  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>使用该命令，你会进入一个交互式的界面，显示了最后两次提交，并且询问你要压缩哪些。理想状态是你pick最近的一次提交并把它和之前的提交squash。  </p>
+<p>接下来你会被要求为合并后的这次提交填写描述信息。这一个过程实际上重写了你的提交历史。  </p>
+<h2 id="8-_u4FDD_u5B58_u5C1A_u672A_u63D0_u4EA4_u7684_u6539_u52A8"><a href="#8-_u4FDD_u5B58_u5C1A_u672A_u63D0_u4EA4_u7684_u6539_u52A8" class="headerlink" title="8.保存尚未提交的改动"></a>8.保存尚未提交的改动</h2><p>比方说你正在解决一个bug或是添加某个新功能，这时你突然被要求展示你的工作。你当前的工作还没有完成到进行提交的地步，而且你在这个阶段也没办法展示你的工作（如果不回退所有变化的话）。在这种情况下，git stash可以拯救你。stash命令本质上是保存了你全部的改动以供将来使用。保存你的改动，你只需要运行如下命令：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
+<p>查看暂存列表，你可以运行如下命令：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+<p>如果你不想保存了或是想要恢复这些改动，你使用如下命令：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br></pre></td></tr></table></figure>
+<p>在最后一张截图中，你可以看到，每一次保存都有一个标示符，一个独一无二的数字（尽管我们此处只有一次保存），万一你只想使用某些保存，你需要在apply命令后指明标示符。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply stash@&#123;<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>##9.检查丢失的提交<br>尽管reflog是一种查看丢失提交的方法，但是它在大型仓库中行不通。这时就该fsck  </p>
+<p>(file system check)出场了。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fsck --lost-found</span><br></pre></td></tr></table></figure>
+<p>这里你可以看到丢失的提交，你可以使用git show [commit_hash]来查看这些提交所包含的改动或者是使用git merge [commit_hash]来恢复它。  </p>
+<p>git fsck比reglog有一个优势。比如你删除了一个远端分支并且克隆了仓库，使用fsck命令你可以搜索并恢复该远端分支。  </p>
+<h2 id="10-cherry-pick_u547D_u4EE4"><a href="#10-cherry-pick_u547D_u4EE4" class="headerlink" title="10.cherry-pick命令"></a>10.cherry-pick命令</h2><p>我把最优雅的Git命令留在了最后。cherry-pick是我最爱的Git命令，因为它的名字就意味着它的功能！  </p>
+<p>简而言之，cherry-pick是指从不同的分支里选择某次提交并且把它合并到当前的分支来。如果你在并行的开发某两个或多个分支，你可能会注意到有一个bug存在于所有的分支中。如果你在一个分支中解决了它，你可以使用cherry-pick来把这次提交合并进其他的分支而不会搞乱其他的文件或是提交。  </p>
+<p>让我们想象一个可以使用该命令的场景。我有两个分支，并且我想要把b20fd14: Cleaned junk这次提交使用cherry-pick的方法放入到另一个分支。  </p>
+<p>我切换到我想要放入该提交的分支，然后运行如下命令：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick [commit_<span class="built_in">hash</span>]</span><br></pre></td></tr></table></figure>
+<p>尽管我们本次使用cherry-pick没什么问题，但是你应该清楚这个命令会带来冲突，请谨慎使用。  </p>
+<h2 id="u5C0F_u7ED3"><a href="#u5C0F_u7ED3" class="headerlink" title="小结"></a>小结</h2><p>说着说着我们就来到了文章的末尾，我认为这些技巧会让你的Git水平更上一层楼。  </p>
+<p>Git是最棒的，只要你能想得到，它就能做得到。  </p>
+<p>因此，要经常挑战自己的Git水平。最后你很有可能会学到新的东西。  </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-how-we-know" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -735,65 +860,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frontend/">frontend</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-daemon" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/05/18/daemon/" class="article-date">
-  	<time datetime="2014-05-17T16:00:00.000Z" itemprop="datePublished">2014-05-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/05/18/daemon/">nodejs写自己的守护进程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>起初我也是使用网上流行的forever来尝试，发现控制forever挺麻烦的，特别是多个nodejs节点的时候，总是提示.forever文件已经存在，需要使用-a或者–append来处理，然后实际上有时候进程死了它并不知晓  </p>
-<p>后来就写了个简单的守护进程，用主进程来启动子进程，如果子进程死了就重启子进程，还有优化的余地，比如如何停止所有的节点的问题，这个用别的shell来处理了，这里只是贴出守护进程的代码  </p>
-<p>也说说写这个守护进程的目的，起来正常来说，如果容错写的够好是不需要守护进程的，但是我之前发现有个问题，mysql在运行一定时间之后，会断开所有的连接，导致nodejs读取mysql的连接中断，这时候nodejs就会挂掉，使用连接池连接mysql的话，虽然nodejs不会挂掉，但是连接池实际上属于无用状态，也读取不到mysql的数据，导致请求会阻塞，浏览器一直无法响应  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> spawn = <span class="built_in">require</span>(<span class="string">'child_process'</span>).spawn,</span><br><span class="line">  	server = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startServer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'start server'</span>);</span><br><span class="line">    server = spawn(<span class="string">'node'</span>,[<span class="string">'app.js'</span>]);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'node js pid is '</span>+server.pid);</span><br><span class="line">    server.on(<span class="string">'close'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">code,signal</span>)</span>&#123;</span><br><span class="line">        server.kill(signal);</span><br><span class="line">        server = startServer();</span><br><span class="line">    &#125;);</span><br><span class="line">    server.on(<span class="string">'error'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">code,signal</span>)</span>&#123;</span><br><span class="line">        server.kill(signal);</span><br><span class="line">        server = startServer();</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> server;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">startServer();</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
 	</div>
 
       
