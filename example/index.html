@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Photo</title>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
+body {
+    color: #000;
+    background-color: #fff;
+}
+
+.inverse {
+    background-color: #000;
+    color: #fff;
+}
+
+pre {
+    font-size: 7px;
+    text-align: center;
+    font-family: Ubuntu Mono, monospace !important;
+    text-rendering: optimizeSpeed;
+}
+
+</style>
+
+</head>
+<body>
+  <script src="http://mir3z.github.io/aalib.js/build/aalib.js"></script>
+  <script type="text/javascript">
+          aalib.read.image.fromURL("./img/meng.png")
+              .pipe(aalib.aa({ width: 960, height: 1280 }))
+              .pipe(aalib.render.html())
+              .pipe(function (el) {
+                  document.body.appendChild(el);
+              })
+              .end();
+      </script>
+</body>
+</html>
