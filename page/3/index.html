@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>前端自由者</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最可怕的生活不是今天不知道明天怎样，而是现在就看到了自己一生的全部，而且无法改变。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端自由者">
+<meta property="og:url" content="http://farmanyu.github.io/page/3/index.html">
+<meta property="og:site_name" content="前端自由者">
+<meta property="og:description" content="最可怕的生活不是今天不知道明天怎样，而是现在就看到了自己一生的全部，而且无法改变。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端自由者">
+<meta name="twitter:description" content="最可怕的生活不是今天不知道明天怎样，而是现在就看到了自己一生的全部，而且无法改变。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<script type='text/javascript'>window._ty_rum||function(t){function e(t){switch(typeof t){case"object":if(!t)return"null";if(t instanceof Array){for(var r="[",n=0;n<t.length;n++)r+=(n>0?",":"")+e(t[n]);return r+"]"}var r="{",n=0;for(var a in t)if("function"!=typeof t[a]){var o=e(t[a]);r+=(n>0?",":"")+e(a)+":"+o,n++}return r+"}";case"string":return'"'+t.replace(/([\"\\])/g,"\\$1")+'"';case"number":return t.toString();case"boolean":return t?"true":"false";case"function":return"[function]";case"undefined":default:return"undefined"}}function r(e){return t.encodeURIComponent?encodeURIComponent(e):e}function n(){return Date.now?Date.now():(new Date).valueOf()}function a(t){return function(t,e){}}function o(){b.initend()}function i(){"complete"===y.readyState&&b.initend()}function s(t){function e(){b.send()}return v.load_time?!0:(b.initend(),v.load_time=n(),void(9===t?e():setTimeout(e,0)))}function u(){E||s(9),E=1}function c(){b.touch||(b.touch=n())}function f(t){var e=arguments,r="unknown",a=[n()];if(0!=e.length){if("string"==typeof t){var o=e.length<4?e.length:4;a[1]=e[0],o>2&&(a[2]=e[2],a[3]=0,a[4]=e[1]),o>3&&e[3]&&(a[3]=e[3])}else if(t instanceof Event&&(a[1]=t.message||(t.error&&t.error.constructor.name)+(t.error&&t.error.message)||"",a[2]=t.lineno?t.lineno:0,a[3]=t.colno?t.colno:0,a[4]=t.filename||t.error&&t.error.fileName||t.target&&t.target.baseURI||"",a[4]==y.URL&&(a[4]="#"),a[1]===r&&a[4]===r))return;b.errors.push(a)}}function d(t,e,r){for(var n="o."+e+"(",a=0;a<r.length;a++)n+=(a>0?",":"")+"a["+a+"]";return n+=");",new Function(n)()}function l(t){return function(){var e=arguments;if(!this._ty_wrap){var r=T.args.apply(this,e);this._ty_rum={method:r[0],url:r[1],start:n()}}try{return t.apply(this,e)}catch(a){return this.open=t,d(this,"open",e)}}}function h(e){return"string"==typeof e?e.length:t.ArrayBuffer&&e instanceof ArrayBuffer?e.byteLength:t.Blob&&e instanceof Blob?e.size:e&&e.length?e.length:0}function p(e){return function(){function r(t){var e,r,a=c._ty_rum;if(a){if(4!==a.readyState&&(a.end=n()),a.s=c.status,""==c.responseType||"text"==c.responseType)a.res=h(c.responseText);else if(c.response)a.res=h(c.response);else try{a.res=h(c.responseText)}catch(i){a.res=0}if(a.readyState=c.readyState,a.cb_time=f,e=[a.method+" "+a.url,a.s>0?a.end-a.start:0,f,a.s,a.s>0?0:t,a.res,a.req],a.r&&(r=o(c),r&&(r=r.xData)&&(e.push(r.id),e.push(r.action),e.push(r.time&&r.time.duration),e.push(r.time&&r.time.qu))),v.aa.push(e),v.server.custom_urls&&v.server.custom_urls.length&&!b.ct){if(!v.pattern){v.pattern=[];for(var s=0;s<v.server.custom_urls.length;s++)v.pattern.push(new RegExp(v.server.custom_urls[s]))}for(var s=0;s<v.pattern.length;s++)if(a.url.match(v.pattern[s])){b.ct=a.end+f;break}}b.sa(),c._ty_rum=null}}function a(){4==c.readyState&&r(0)}function o(e){var r;if(e.getResponseHeader){var n=T.parseJSON(e.getResponseHeader("X-Tingyun-Tx-Data"));n&&n.r&&e._ty_rum&&n.r+""==e._ty_rum.r+""&&(r={name:e._ty_rum.url,xData:n},w&&t._ty_rum.c_ra.push(r))}return r}function i(t){return function(){var e;4==c.readyState&&c._ty_rum&&(c._ty_rum.end=e=n(),c._ty_rum.readyState=4);var r=t.apply(this,arguments);return 4==c.readyState&&(f=n()-e),a(),r}}function s(t){return function(){var e=c._ty_rum;return e?"progress"==t?!0:("abort"==t?r(905):"loadstart"==t?e.start=n():"error"==t?r(990):"timeout"==t&&r(903),!0):!0}}function u(t,e){e instanceof Array||(e=[e]);for(var r=0;r<e.length;r++){var n=e[r];T.sh(t,n,s(n),!1)}}if(!this._ty_wrap){this._ty_rum.start=n(),this._ty_rum.req=arguments[0]?h(arguments[0]):0;var c=this,f=0,l=T.wrap(!1,this,"onreadystatechange",i);l||T.sh(this,"readystatechange",a,!1),u(this,["error","progress","abort","load","loadstart","loadend","timeout"]),l||setTimeout(function(){T.wrap(!1,c,"onreadystatechange",i)},0)}var p=function(){function t(t){var e={},r=/^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?/.exec(t);return r&&(e.protocol=r[1]?r[1]+":":"http:",e.hostname=r[3],e.port=r[4]||""),e}return function(e){var r=location;if(e=T.trim(e)){if(e=e.toLowerCase(),e.startsWith("//")&&(e=r.protocol+e),!e.startsWith("http"))return!0;var n=t(e),a=n.protocol===r.protocol&&n.hostname===r.hostname;return a&&(a=n.port===r.port?!0:!r.port&&("http:"===r.protocol&&"80"===n.port||"https:"===r.protocol&&"443"===n.port)),a}return!1}}(),m=arguments;try{try{var y=v.server;y&&y.id&&this._ty_rum&&p(this._ty_rum.url)&&(this._ty_rum.r=(new Date).getTime()%1e8,this.setRequestHeader&&this.setRequestHeader("X-Tingyun-Id",y.id+";r="+this._ty_rum.r))}catch(g){}return e.apply(this,m)}catch(g){return this.send=e,d(this,"send",m)}}}var m=t.XMLHttpRequest,y=document,v=t._ty_rum={st:n(),ra:[],c_ra:[],aa:[],snd_du:function(){return this.server.adu?1e3*this.server.adu:1e4},cc:function(){return this.server.ac?this.server.ac:10}};var ty_rum=v;ty_rum.server = {id:'sHhT9G5G0I8',beacon:'beacon.tingyun.com',beacon_err:'beacon-err.tingyun.com',key:'nfXygaUNX1o',trace_threshold:7000,custom_urls:[],sr:1.0};if(v.server&&!(v.server.sr&&Math.random()>=v.server.sr)){var g=String.prototype.trim;String.prototype.startsWith||(String.prototype.startsWith=function(t,e){return e=e||0,this.indexOf(t,e)===e});var _=/^http/i,S=function(){function t(){return(65536*(1+Math.random())|0).toString(16).substring(1)}return t()+"-"+t()+t()}(),T={wrap:function(t,e,r,n,a){try{var o=e[r]}catch(i){if(!t)return!1}if(!o&&!t)return!1;if(o&&o._ty_wrap)return!1;try{e[r]=n(o,a)}catch(i){return!1}return e[r]._ty_wrap=[o],!0},mkurl:function(t,e){var a=arguments,o=/^https/i.test(y.URL)?"https":"http";if(o=o+"://"+t+"/"+e+"?av=1.0.0&v=1.3.1&key="+r(v.server.key)+"&ref="+r(y.URL)+"&rand="+n()+"&pvid="+S,"pf"!==e&&v&&v.agent&&v.agent.n&&(o+="&n="+r(v.agent.n)),a.length>2){var i=a[2];for(var s in i)o+="&"+s+"="+i[s]}return o},GET:function(t,e){function r(){e&&e.apply(this,arguments),n.parentNode&&n.parentNode.removeChild(n)}if(navigator&&navigator.sendBeacon&&_.test(t))return navigator.sendBeacon(t,null);var n=y.createElement("img");return n.setAttribute("src",t),n.setAttribute("style","display:none"),this.sh(n,"readystatechange",function(){("loaded"==n.readyState||4==n.readyState)&&r("loaded")},!1),this.sh(n,"load",function(){return r("load"),!0},!1),this.sh(n,"error",function(){return r("error"),!0},!1),y.body.appendChild(n)},fpt:function(t,e,r){function n(t,e,r){var n=y.createElement(t);try{for(var a in e)n[a]=e[a]}catch(o){var i="<"+t;for(var a in e)i+=" "+a+'="'+e[a]+'"';i+=">",r||(i+="</"+t+">"),n=y.createElement(i)}return n}var a=n("div",{style:"display:none"},!1),o=n("iframe",{name:"_ty_rum_frm",width:0,height:0,style:"display:none"},!1),i=n("form",{style:"display:none",action:t,enctype:"application/x-www-form-urlencoded",method:"post",target:"_ty_rum_frm"},!1),s=n("input",{name:"data",type:"hidden"},!0);return s.value=e,i.appendChild(s),a.appendChild(o),a.appendChild(i),y.body.appendChild(a),i.submit(),o.onreadystatechange=function(){("complete"===o.readyState||4===o.readyState)&&(r(null,o.innerHTML),y.body.removeChild(a))},!0},POST:function(e,r,n,a){if(this.ie)return this.fpt(e,r,a);if(navigator&&navigator.sendBeacon&&_.test(e))return navigator.sendBeacon(e,r);var o;if(t.XDomainRequest)return o=new XDomainRequest,o.open("POST",e),o.onload=function(){a(null,o.responseText)},this.sh(o,"load",function(){a(null,o.responseText)},!1),this.sh(o,"error",function(){a("POST("+e+")error")},!1),this.wrap(!0,o,"onerror",function(t){return function(){return a&&a("post error",o.responseText),!0}}),o.send(r),!0;if(!m)return!1;o=new m,o.overrideMimeType&&o.overrideMimeType("text/html");try{o._ty_wrap=1}catch(i){}var s=0;o.onreadystatechange=function(){4==o.readyState&&200==o.status&&(0==s&&a(null,o.responseText),s++)},o.onerror&&this.wrap(!0,o,"onerror",function(t){return function(){return a("post error",o.responseText),"function"==typeof t?t.apply(this,arguments):!0}});try{o.open("POST",e,!0)}catch(i){return this.fpt(e,r,a)}for(var u in n)o.setRequestHeader(u,n[u]);return o.send(r),!0},sh:function(t,e,r,n){return t.addEventListener?t.addEventListener(e,r,n):t.attachEvent?t.attachEvent("on"+e,r):!1},args:function(){for(var t=[],e=0;e<arguments.length;e++)t.push(arguments[e]);return t},stringify:e,parseJSON:function(e){if(e&&"string"==typeof e){var r=t.JSON?t.JSON.parse:function(t){return new Function("return "+t)()};return r(e)}return null},trim:g?function(t){return null==t?"":g.call(t)}:function(t){return null==t?"":t.toString().replace(/^\s+/,"").replace(/\s+$/,"")}},w=t.performance?t.performance:t.Performance;w&&(T.sh(w,"resourcetimingbufferfull",function(){var t=w.getEntriesByType("resource");t&&(v.ra=v.ra.concat(t),w.clearResourceTimings())},!1),T.sh(w,"webkitresourcetimingbufferfull",function(){var t=w.getEntriesByType("resource");t&&(v.ra=v.ra.concat(t),w.webkitClearResourceTimings())},!1));for(var b=v.metric={ready:function(){return v.load_time},initend:function(){function t(){b.sa()}v.end_time||(v.end_time=n(),this._h=setInterval(t,2e3))},send:function(){function n(){function e(t){return a[t]>0?a[t]-s:0}var n={};if(w&&w.timing){var a=w.timing;s=a.navigationStart;var o=e("domainLookupStart"),i=e("domainLookupEnd"),u=e("redirectStart"),c=e("redirectEnd"),f=e("connectStart"),d=e("connectEnd");n={f:e("fetchStart"),qs:e("requestStart"),rs:e("responseStart"),re:e("responseEnd"),os:e("domContentLoadedEventStart"),oe:e("domContentLoadedEventEnd"),oi:e("domInteractive"),oc:e("domComplete"),ls:e("loadEventStart"),le:e("loadEventEnd")},d-f>0&&(n.cs=f,n.ce=d),i-o>0&&(n.ds=o,n.de=i),(c-u>0||c>0)&&(n.es=u,n.ee=c),0==n.le&&(n.ue=v.load_time-s);var l;if(a.msFirstPaint)l=a.msFirstPaint;else if(t.chrome&&chrome.loadTimes){var h=chrome.loadTimes();h&&h.firstPaintTime&&(l=1e3*h.firstPaintTime)}else v.firstPaint&&(l=v.firstPaint);l&&(n.fp=Math.round(l-s)),a.secureConnectionStart&&(n.sl=e("secureConnectionStart"))}else n={t:s,os:v.end_time-s,ls:v.load_time-s};n.je=b.errors.length,b.ct&&(n.ct=b.ct-s),b.touch&&(n.fi=b.touch-s);var p=v.agent;return p&&(n.id=r(p.id),n.a=p.a,n.q=p.q,n.tid=r(p.tid),n.n=r(p.n)),n}function o(e){var r=t._ty_rum.c_ra;if(e)for(var n=r.length-1;n>=0;n--)if(e.indexOf(r[n].name)>-1)return r[n].xData;return null}function i(t){function e(t){return f[t]>0?f[t]:0}if(t<v.server.trace_threshold)return null;var n=w;if(n&&n.getEntriesByType){var a={tr:!0,tt:r(y.title),charset:y.characterSet},i=v.ra,u=n.getEntriesByType("resource");u&&(i=i.concat(u),n.webkitClearResourceTimings&&n.webkitClearResourceTimings(),n.clearResourceTimings&&n.clearResourceTimings()),a.res=[];for(var c=0;c<i.length;c++){var f=i[c],d={o:e("startTime"),rt:f.initiatorType,n:f.name,f:e("fetchStart"),ds:e("domainLookupStart"),de:e("domainLookupEnd"),cs:e("connectStart"),ce:e("connectEnd"),sl:e("secureConnectionStart"),qs:e("requestStart"),rs:e("responseStart"),re:e("responseEnd")},l=o(f.name);l&&(d.aid=l.id,d.atd=l.trId,d.an=l.action,d.aq=l.time&&l.time.qu,d.as=l.time&&l.time.duration),a.res.push(d)}if(b.errors.length){a.err=[];for(var c=0,h=b.errors;c<h.length;c++)a.err.push({o:Math.round(h[c][0]-s),e:h[c][1],l:h[c][2],c:h[c][3],r:h[c][4]})}return a}return null}if(this.sended)return!1;if(!this.ready())return!1;var s=v.st,u={};try{pf=n(),u=i(pf.ls>0?pf.ls:v.load_time-s)}catch(c){}u=u?T.stringify(u):"";var f=T.mkurl(v.server.beacon,"pf",pf);if(0!=u.length&&T.POST(f,u,{},a("POST"))||T.GET(f),this.errors.length>0){var c=b.errors[0];T.GET(T.mkurl(v.server.beacon_err,"err",{data:r(e([c[1],c[2],c[3],"#"==c[4]?y.URL:c[4],b.errors.length]))}),a("GET err"))}return this.sended=!0,this.sa(1),!0},sa:function(t){(this.ready()||t)&&(t||(t=!this._last_send||n()-this._last_send>v.snd_du()||v.aa.length>=v.cc()),v.aa.length>0&&t&&(this._last_send=n(),T.POST(T.mkurl(v.server.beacon,"xhr"),T.stringify({xhr:v.aa}),{},a("POST")),v.aa=[]))},errors:[]},E=null,R=[["load",s],["beforeunload",u],["pagehide",u],["unload",u],["error",f]],x=0;x<R.length;x++)T.sh(t,R[x][0],R[x][1],!1);for(var q=[["scroll",c],["keypress",c],["click",c],["DOMContentLoaded",o],["readystatechange",i]],x=0;x<q.length;x++)T.sh(y,q[x][0],q[x][1],!1);if(T.wrap(!1,t,"requestAnimationFrame",function(e){return function(){return v.firstPaint=n(),t.requestAnimationFrame=e,e.apply(this,arguments)}}),m)if(m.prototype)T.wrap(!1,m.prototype,"open",l),T.wrap(!1,m.prototype,"send",p);else{T.ie=7;var C=m;t.XMLHttpRequest=function(){var t=new C;return T.wrap(!1,t,"open",l),T.wrap(!1,t,"send",p),t}}else t.ActiveXObject&&(T.ie=6);}}(window);</script>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars2.githubusercontent.com/u/741048?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Farman</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/life">生活</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/FarmanYu" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/gghongfei" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/farman-6" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/tags/child-process/" style="font-size: 10px;">child_process</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/frontend/" style="font-size: 17.14px;">frontend</a> <a href="/tags/game/" style="font-size: 11.43px;">game</a> <a href="/tags/git/" style="font-size: 12.86px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 12.86px;">html5</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/js/" style="font-size: 15.71px;">js</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/node/" style="font-size: 14.29px;">node</a> <a href="/tags/php/" style="font-size: 10px;">php</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/soft/" style="font-size: 10px;">soft</a> <a href="/tags/tools/" style="font-size: 18.57px;">tools</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">最可怕的生活不是今天不知道明天怎样，而是现在就看到了自己一生的全部，而且无法改变。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Farman</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars2.githubusercontent.com/u/741048?v=3&amp;s=460" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Farman</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/life">生活</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/FarmanYu" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/gghongfei" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/farman-6" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+  
+    <article id="post-10-tips-git-next-level" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/08/28/10-tips-git-next-level/" class="article-date">
+  	<time datetime="2014-08-27T16:00:00.000Z" itemprop="datePublished">2014-08-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/28/10-tips-git-next-level/">提升git的10个技巧</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近，我们发表了关于Git基础知识和在团队中使用Git的教程。我们之前讨论的那些命令，已经足够让帮助一个开发者在Git世界里生存了。本篇文章，我们将尝试探索如何更有效的管理您的时间以及如何充分使用Git提供的各种功能。  </p>
+<p>注意：本文中，一些命令包含含有方括号的部分(e.g.git add -p [file_name]).在这些例子中，您要在该处插入所需的数字，标示符等。而不需要保留方括号。  </p>
+<h2 id="1-Git_u81EA_u52A8_u8865_u5168"><a href="#1-Git_u81EA_u52A8_u8865_u5168" class="headerlink" title="1.Git自动补全"></a>1.Git自动补全</h2><p>如果你在命令行中使用Git命令，每次手动输入命令是一件非常烦人的。为了解决这个问题，你可以很方便的开启自动补全功能。  </p>
+<p>在Unix系统下，运行以下指令来获取脚本：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash</span><br></pre></td></tr></table></figure>
+<p>然后，在您的~/.bash_profile文件中添加以下代码：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="operator">-f</span> ~/.git-completion.bash ]; <span class="keyword">then</span></span><br><span class="line">    . ~/.git-completion.bash</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>尽管我之前就提到过，在这里我仍要不厌其烦的说：如果你想使用Git提供的全部功能，你肯定是需要转而使用命令行来操作的。  </p>
+<h2 id="2-_u5728Git_u4E2D_u5FFD_u7565_u6587_u4EF6"><a href="#2-_u5728Git_u4E2D_u5FFD_u7565_u6587_u4EF6" class="headerlink" title="2.在Git中忽略文件"></a>2.在Git中忽略文件</h2><p>你是否对出现在你Git仓库中的已编译文件（比如.pyc）感到厌烦？  </p>
+<p>亦或是你已经对把它们加入Git中这件事感到忍无可忍了？  </p>
+<p>眼下就有一个可以让Git忽略特定文件或是目录的方法。只需要简单的创建一个.gitignore文件，然后列出你不想让Git跟踪的文件和目录即可。你可以使用感叹号(!)来指出例外的情况。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*.pyc</span><br><span class="line">*.exe</span><br><span class="line">my_db_config/</span><br><span class="line"></span><br><span class="line">!main.pyc</span><br></pre></td></tr></table></figure>
+<h2 id="3-_u8C01_u52A8_u4E86_u6211_u7684_u4EE3_u7801_uFF1F"><a href="#3-_u8C01_u52A8_u4E86_u6211_u7684_u4EE3_u7801_uFF1F" class="headerlink" title="3.谁动了我的代码？"></a>3.谁动了我的代码？</h2><p>出了问题后去责怪别人，是人类的天性。如果你的成品服务器出了问题，你可以非常轻松的把坏人揪出来——只需要使用git blame命令。  </p>
+<p>这个命令会显示文件中每一行的作者，最后一次改动后进行的提交(commit)以及该次提交的时间戳。。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git blame [file_name]</span><br></pre></td></tr></table></figure>
+<p>下图中，你可以看到在一个大型仓库中使用该命令是什么样子的。  </p>
+<h2 id="4-_u56DE_u987E_u4ED3_u5E93_u5386_u53F2"><a href="#4-_u56DE_u987E_u4ED3_u5E93_u5386_u53F2" class="headerlink" title="4.回顾仓库历史"></a>4.回顾仓库历史</h2><p>在之前的教程中，我们了解了git log命令的用法，然而，它还有三个选项，你应该了解。  </p>
+<ul>
+<li>–oneline——把每次提交间显示的信息压缩成缩减的hash值和提交信息，在一行显示。</li>
+<li>–graph——该选项会在输出界面的左手边用一种基于文本的图形表示法来显示历史。如果你只是浏览一个单独分支的历史，那么这个功能是没有用的。</li>
+<li>–all——显示全部分支的历史<br>这里是以上命令综合使用的效果。  </li>
+</ul>
+<h2 id="5-_u7EDD_u4E0D_u4E22_u5931_u4E00_u4E2A_u63D0_u4EA4_u4FE1_u606F"><a href="#5-_u7EDD_u4E0D_u4E22_u5931_u4E00_u4E2A_u63D0_u4EA4_u4FE1_u606F" class="headerlink" title="5.绝不丢失一个提交信息"></a>5.绝不丢失一个提交信息</h2><p>比方说，你提交了一个你不想要提交的代码，最后你通过使用硬重置(hard reset)使其回到了之前的状态。稍后，你意识到，在这个过程中你丢失了一些其他的信息，并想要退回或是至少能看一眼。git reflog命令可以帮你做到这一点。  </p>
+<p>一个简单的git log命令，显示你最近的提交信息，以及上一次，再上一次的提交信息，以此类推。  </p>
+<p>而git reflog显示的是所有head移动的信息。记住，它是在本地的，而不是你仓库的一部分，不会包含在推送(push)和合并中(merge)。  </p>
+<p>如果我使用git log，我得到的提交信息是我的仓库的一部分。  </p>
+<p>然而git reflog显示了一个提交信息（b1b0ee9 – HEAD@{4}），这是我使用硬重置(hard reset)时丢失的那个。  </p>
+<h2 id="6-_u6682_u5B58_u4E00_u4E2A_u6587_u4EF6_u7684_u90E8_u5206_u6539_u52A8"><a href="#6-_u6682_u5B58_u4E00_u4E2A_u6587_u4EF6_u7684_u90E8_u5206_u6539_u52A8" class="headerlink" title="6.暂存一个文件的部分改动"></a>6.暂存一个文件的部分改动</h2><p>通常来讲，创建一个基于特性的提交是一个良好的做法，就是说，每次提交都必须代表一个新特性的产生或者是一个bug的修复。考虑一下，如果你修复了两个bug，或是添加了多个新特性但是却没有提交这些变化会怎样呢？在这种情况下，你可以把这些变化放在一次提交中。但是还有一个更好的方法：把文件分别暂存(Stage)然后分别提交。  </p>
+<p>比如说，你对一个文件进行了多次修改并且想把他们分别提交。这种情况下，你可以在添加命令(add)中加上-p选项  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add -p [file_name]</span><br></pre></td></tr></table></figure>
+<p>让我们演示一下。我在file_name文件中添加了3行文字，而且我只想提交第一行和第三行。我们先看一下git diff显示的结果。  </p>
+<p>然后，我们看一下，在添加命令(add)中加上-p选项后会发生什么。  </p>
+<p>看上去，Git假定所有的改变都是针对同一件事情的，因此它把这些都放在了一个块里。你有如下几个选项：  </p>
+<ul>
+<li>输入y来缓存该块</li>
+<li>输入n不缓存该块</li>
+<li>输入e来人工编辑该块</li>
+<li>输入d来退出或进入下一个文件</li>
+<li>输入s来分割这个块<br>对我们而言，我们肯定希望把它分成几个部分，有选择的添加一部分而忽略其他的。  </li>
+</ul>
+<p>正如你所看到的，我们添加了第一行和第三行而忽略了第二行。你可以在之后查看仓库状态并进行提交。  </p>
+<h2 id="7-_u5408_u5E76_u591A_u6B21_u63D0_u4EA4"><a href="#7-_u5408_u5E76_u591A_u6B21_u63D0_u4EA4" class="headerlink" title="7.合并多次提交"></a>7.合并多次提交</h2><p>当你提交你的代码进行审核并创建一个pull request时(在开源项目中常常发生这样的情况)，你经常会在代码被采纳前，要求修改一些代码。你进行了一些修改，而在下一次审核中，又会被要求进行另外的修改。你不知道还有多少次修改等着你，在你知道以前，你进行了多次额外的提交。理想的状态是，你可以使用rebase命令，把他们都合并成一次提交。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~[number_of_commits]</span><br></pre></td></tr></table></figure>
+<p>如果你希望合并最后两次提交，您需要以下命令  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i HEAD~<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>使用该命令，你会进入一个交互式的界面，显示了最后两次提交，并且询问你要压缩哪些。理想状态是你pick最近的一次提交并把它和之前的提交squash。  </p>
+<p>接下来你会被要求为合并后的这次提交填写描述信息。这一个过程实际上重写了你的提交历史。  </p>
+<h2 id="8-_u4FDD_u5B58_u5C1A_u672A_u63D0_u4EA4_u7684_u6539_u52A8"><a href="#8-_u4FDD_u5B58_u5C1A_u672A_u63D0_u4EA4_u7684_u6539_u52A8" class="headerlink" title="8.保存尚未提交的改动"></a>8.保存尚未提交的改动</h2><p>比方说你正在解决一个bug或是添加某个新功能，这时你突然被要求展示你的工作。你当前的工作还没有完成到进行提交的地步，而且你在这个阶段也没办法展示你的工作（如果不回退所有变化的话）。在这种情况下，git stash可以拯救你。stash命令本质上是保存了你全部的改动以供将来使用。保存你的改动，你只需要运行如下命令：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
+<p>查看暂存列表，你可以运行如下命令：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+<p>如果你不想保存了或是想要恢复这些改动，你使用如下命令：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br></pre></td></tr></table></figure>
+<p>在最后一张截图中，你可以看到，每一次保存都有一个标示符，一个独一无二的数字（尽管我们此处只有一次保存），万一你只想使用某些保存，你需要在apply命令后指明标示符。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash apply stash@&#123;<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>##9.检查丢失的提交<br>尽管reflog是一种查看丢失提交的方法，但是它在大型仓库中行不通。这时就该fsck  </p>
+<p>(file system check)出场了。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fsck --lost-found</span><br></pre></td></tr></table></figure>
+<p>这里你可以看到丢失的提交，你可以使用git show [commit_hash]来查看这些提交所包含的改动或者是使用git merge [commit_hash]来恢复它。  </p>
+<p>git fsck比reglog有一个优势。比如你删除了一个远端分支并且克隆了仓库，使用fsck命令你可以搜索并恢复该远端分支。  </p>
+<h2 id="10-cherry-pick_u547D_u4EE4"><a href="#10-cherry-pick_u547D_u4EE4" class="headerlink" title="10.cherry-pick命令"></a>10.cherry-pick命令</h2><p>我把最优雅的Git命令留在了最后。cherry-pick是我最爱的Git命令，因为它的名字就意味着它的功能！  </p>
+<p>简而言之，cherry-pick是指从不同的分支里选择某次提交并且把它合并到当前的分支来。如果你在并行的开发某两个或多个分支，你可能会注意到有一个bug存在于所有的分支中。如果你在一个分支中解决了它，你可以使用cherry-pick来把这次提交合并进其他的分支而不会搞乱其他的文件或是提交。  </p>
+<p>让我们想象一个可以使用该命令的场景。我有两个分支，并且我想要把b20fd14: Cleaned junk这次提交使用cherry-pick的方法放入到另一个分支。  </p>
+<p>我切换到我想要放入该提交的分支，然后运行如下命令：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick [commit_<span class="built_in">hash</span>]</span><br></pre></td></tr></table></figure>
+<p>尽管我们本次使用cherry-pick没什么问题，但是你应该清楚这个命令会带来冲突，请谨慎使用。  </p>
+<h2 id="u5C0F_u7ED3"><a href="#u5C0F_u7ED3" class="headerlink" title="小结"></a>小结</h2><p>说着说着我们就来到了文章的末尾，我认为这些技巧会让你的Git水平更上一层楼。  </p>
+<p>Git是最棒的，只要你能想得到，它就能做得到。  </p>
+<p>因此，要经常挑战自己的Git水平。最后你很有可能会学到新的东西。  </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-how-we-know" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/08/06/how-we-know/" class="article-date">
+  	<time datetime="2014-08-05T16:00:00.000Z" itemprop="datePublished">2014-08-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/06/how-we-know/">一个程序员的告白：多年后，我才学会承认自己的无知</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>你知道吗？你那些年收入 15 万美金的程序员朋友们，并不是一天到晚都在写程序。</p>
+<blockquote>
+<p>懂得愈多，就会理解其实自己知道的事物宛如沧海一粟。懂得愈少，就会产生自己什麽都知道的错觉。<br>-David T. Freeman</p>
+</blockquote>
+<p>几乎每一天，我都会发现某些我从来未知的事物。 </p>
+<p>今天，我就会坦白，我压根不知道什麽 rails plugins，面对 Rails，我根本像个三岁婴儿。  </p>
+<p>每个人都是从一无所知开始的。  </p>
+<p>如果插根电线，就能自动灌输某种科目的知识到我们的脑子裡，那真的是再好也不过了。但是现实当然并非如此，我们需要付出心血、勤勉努力才能牢牢掌握知识，而这，永远始于全然无知。  </p>
+<p>所以，习惯这件事吧，别想当天生全知的上帝。  </p>
+<p>最初我靠接桉维生，习惯「无知」让我无所适从。我的骄傲嚥不下无知的感受，我的自尊筑起防御牆，打了一场场看似胜利的仗，我服膺「装久了就是你的（fake it ’til you make it）」这句名言，即使不懂， 还是硬要装懂。  </p>
+<p>但是有一天，假装累了，我与无知的感受妥协了。从此之后，如果有人问了什麽我不懂的问题，我会努力压抑自尊，马上承认「我不懂」，通常接着我会说「但是我很确定我可以试着解决」。</p>
+<h2 id="u5BF9_u81EA_u5DF1_u8BDA_u5B9E"><a href="#u5BF9_u81EA_u5DF1_u8BDA_u5B9E" class="headerlink" title="对自己诚实"></a>对自己诚实</h2><p>对于自己「其实懂得不多」的事实，我採取了新的态度。其后，我快速而且敏锐地感知到自己学习的速度正在疾速前进。 </p>
+<p>我不再盲目追赶那些我本来应该要知道的知识，现在我意识到，我愈常说「我不是很清楚，但我会想办法搞懂它」，我就愈能真正弄明白本来不知道的事物。  </p>
+<p>这远比你预期得收穫还要多。</p>
+<h2 id="u7ED3_u675F_u8BED"><a href="#u7ED3_u675F_u8BED" class="headerlink" title="结束语"></a>结束语</h2><p>首先，承认并且意识自己并不是什麽都知道，拥抱它们，就像掌握机会一般，而不是错误。  </p>
+<p>从简单有趣的事情开始做起，将它培养成一种嗜好，别想太多，别做不切实际的计划，学着喜爱并且享受过程。  </p>
+<p>设定专桉目标时不要好高骛远，但是也请保持得以鞭策自己的难度。  </p>
+<p>这个专桉也许简单如在 HTML 页面中打出静态的「Hello World」，也可能複杂到为自己的多重执行实体网站应用建立一个负载测试与基准系统。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-work" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/08/01/work/" class="article-date">
+  	<time datetime="2014-07-31T16:00:00.000Z" itemprop="datePublished">2014-08-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/08/01/work/">工作博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天给部门添加了一个部门博客，决心要改变要从自己开始。要做技术，这样的事情还是得自己来。</p>
+<p><a href="http://ctripcruise.github.io/" target="_blank" rel="external">博客地址</a></p>
+<blockquote>
+<p>种下一棵种子，用心呵护，盼望秋天有所收获</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-rain" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/07/15/rain/" class="article-date">
+  	<time datetime="2014-07-14T16:00:00.000Z" itemprop="datePublished">2014-07-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/07/15/rain/">雨天</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>早上忽然下起了大雨，像是诉说着某些不经意的悲伤。</p>
+<blockquote>
+<p>弟弟回去了，期望他的回归。</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-feedReader" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/07/08/feedReader/" class="article-date">
+  	<time datetime="2014-07-07T16:00:00.000Z" itemprop="datePublished">2014-07-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/07/08/feedReader/">Rss阅读器思考记录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>想熟悉nodejs完成一个项目，但是对于MVC了解实在太少，于是想到做一个Rss阅读器。</p>
+</blockquote>
+<p>自己想的实现原理是，将远程的Rss文章拉到本地缓存一份，定期更新本地的数据文件，本地查看之前的Rss文档。</p>
+<blockquote>
+<p>第一个想到的就是experss，nodejs写的本地服务器，作为本地阅读的server。</p>
+</blockquote>
+<p>找到一些Rss源，存成数据文件，提供使用。  </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-aboutfatrue" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/07/08/aboutfatrue/" class="article-date">
+  	<time datetime="2014-07-07T16:00:00.000Z" itemprop="datePublished">2014-07-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/07/08/aboutfatrue/">关于自己的思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#关于自己的思考</p>
+<blockquote>
+<p>早晨醒来，嗓子还是没有好转，这里空气不好，弟弟也要走了，心里有点失落，马上准备要搬家，应该早点收拾好心情，准备新的旅程。 </p>
+</blockquote>
+<p>最近思考了很多，和弟弟也聊了挺多，弟弟选择了一件事，就义无反顾的去做了，起初我不理解，可是我现在也越来越明白，这样的决定也许还是早点做的好，应该选择一样自己的事业，为了生活也是为了自我实现。虽然大公司呆着也不错，但是不应该是一种常态，不得不承认的现实是，我并不比别人聪明多少，继续走下去，或许危机就在未来某天，自己被淘汰。</p>
+<blockquote>
+<p>要做自己想要成为的人，而不盲目接受别人给自己安排好的路。</p>
+</blockquote>
+<p>做自己最想要成为的人，坚持做自己最喜欢的事情，把兴趣变成生活工作，不用太在意周围人的眼光，相信真理掌握在少数人手里，该去拼搏的时候，一定要放手一搏，不要固步自封，应该把思想和眼界放的更开阔，更远大一些。</p>
+<blockquote>
+<p>google公司的员工都认为自己最聪明，或与现实脱节。–来自某新闻</p>
+</blockquote>
+<p>要做聪明的人，但是应该低调，把聪明变成现实生活的一部分，不要盲目自大，自作聪明的结果，大家可以想见，和现实脱节，最终只能是自我毁灭。</p>
+<blockquote>
+<p>天下古今之庸人，皆以一惰字致败；天下古今之才人，皆以一傲字致败。-曾国藩</p>
+</blockquote>
+<p>不要懒惰不去学习，变成庸庸碌碌的一员，不应骄傲，踏实实干才能成功，要收起自己的骄傲的心态。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-rss" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/06/13/rss/" class="article-date">
+  	<time datetime="2014-06-12T16:00:00.000Z" itemprop="datePublished">2014-06-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/13/rss/">关于订阅IOS rss文章</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>参考<a href="https://github.com/tangqiaoboy/iOSBlogCN" target="_blank" rel="external">https://github.com/tangqiaoboy/iOSBlogCN</a>IOS文章的地址，利用生成好的OPML文件导入到阅读网站中，<br>我使用的是国内的鲜果，可以支持在手机上阅读，也可以支持在PC上阅读.<a href="http://xianguo.com/" target="_blank" rel="external">鲜果网传送门</a>.<br>兄弟们，抓紧学起来！！</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rss/">rss</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-phone_upload" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/05/27/phone_upload/" class="article-date">
+  	<time datetime="2014-05-26T16:00:00.000Z" itemprop="datePublished">2014-05-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/27/phone_upload/">手机上传图片问题小结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>早上碰到一个手机上打不开上传控件的问题，具体表现为，android无法打开文件上传控件而ios正常，之前的上传方案是:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">style</span>=<span class="value">"display:none"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span> <span class="attribute">id</span>=<span class="value">"upload"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>通过点击页面上的Element#elem，trigger#upload的click事件来调起控件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#elem"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	 $(<span class="string">"#upload"</span>).trigger(<span class="string">"click"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>推测可能原因有两个，1) trigger方法在android上不生效，2) android不支持file控件.</p>
+<h2 id="u6A21_u62DF_u73AF_u5883_u67E5_u539F_u56E0"><a href="#u6A21_u62DF_u73AF_u5883_u67E5_u539F_u56E0" class="headerlink" title="模拟环境查原因"></a>模拟环境查原因</h2><p>构造静态页</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span> <span class="attribute">id</span>=<span class="value">"upload"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用问题android打开，在原生的android浏览器中，可以打开文件控件，否定第二个原因.<br>增加js，添加jquery，绑定事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#elem"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	 $(<span class="string">"#upload"</span>).trigger(<span class="string">"click"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>也可以调起文件控件，不解，再次操控原始html，设置form的display:none, 无法调起控件，至此大致明白了因果。<br>android手机浏览器应该是在display:none的element上做了不同于PC的特殊渲染处理，导致file无法被获取，固无法调起file控件.</p>
+<h2 id="u89E3_u51B3_u65B9_u6848"><a href="#u89E3_u51B3_u65B9_u6848" class="headerlink" title="解决方案"></a>解决方案</h2><p>将form设置不可见，但是不能设置display:none</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">style</span>=<span class="value">"visibility:hidden;width:0;height:0;overflow:hidden"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span> <span class="attribute">id</span>=<span class="value">"upload"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上传demo，手机打开页面，ok，问题解决了.</p>
+<h2 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h2><p>手机浏览器和PC浏览器还是有较多差异，需要耐心测试才能找到问题的根本原因. </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-thinging" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/05/20/thinging/" class="article-date">
+  	<time datetime="2014-05-19T16:00:00.000Z" itemprop="datePublished">2014-05-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/20/thinging/">思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每天都在喧闹的都市，穿梭来回，看到的每个人，要么着急赶路，要么死死盯着手机，却很少停下来思考。</p>
+<ul>
+<li>对于前途的思考，应该从更高的角度去看，跨端或着跨行业，心里很想把游戏这条路走下去，用cocos2d写一个游戏出来。</li>
+<li>把身体和精神都调整到最佳的状态.</li>
+<li>或者干脆应该去学习c, c++，将游戏进行到底，应该早点做出抉择.</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-FEtools" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/05/19/FEtools/" class="article-date">
+  	<time datetime="2014-05-18T16:00:00.000Z" itemprop="datePublished">2014-05-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/05/19/FEtools/">前端工具</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="FeHelper"><a href="#FeHelper" class="headerlink" title="FeHelper"></a>FeHelper</h2><p>百度高工写的前端工具<a href="https://github.com/zxlie/FeHelper.git" target="_blank" rel="external">FeHelper</a>,包含如下功能:</p>
+<h3 id="u4EE3_u7801_u7F8E_u5316"><a href="#u4EE3_u7801_u7F8E_u5316" class="headerlink" title="代码美化"></a>代码美化</h3><p>包括Javascript代码美化、CSS代码美化、HTML代码美化；其实所有C系的代码，都可以通过Javascript代码美化工具进行格式化查看</p>
+<h3 id="JSON_u63A5_u53E3_u81EA_u52A8_u683C_u5F0F_u5316_u67E5_u770B"><a href="#JSON_u63A5_u53E3_u81EA_u52A8_u683C_u5F0F_u5316_u67E5_u770B" class="headerlink" title="JSON接口自动格式化查看"></a>JSON接口自动格式化查看</h3><p>当你访问的接口（打开的页面）返回的是一个JSON格式的数据，FeHelper会自动将内容进行格式化处理，便于您的查看</p>
+<h3 id="JSON_u67E5_u770B_u5668"><a href="#JSON_u67E5_u770B_u5668" class="headerlink" title="JSON查看器"></a>JSON查看器</h3><p>把你的JSON代码粘贴到JSON查看器的输入框中，点击“格式化”，在下方便会以非常友好的方式列出JSON数据，便于查看</p>
+<h3 id="u5B57_u7B26_u4E32_u7F16_u89E3_u7801"><a href="#u5B57_u7B26_u4E32_u7F16_u89E3_u7801" class="headerlink" title="字符串编解码"></a>字符串编解码</h3><p>包括Unicode编码和解码、UTF-8字符串编码和解码、Base64字符串编解码、字符串MD5编码，前端非常实用的工具</p>
+<h3 id="u4E8C_u7EF4_u7801_u751F_u6210_u5668"><a href="#u4E8C_u7EF4_u7801_u751F_u6210_u5668" class="headerlink" title="二维码生成器"></a>二维码生成器</h3><p>能对网址、普通文本内容、电话号码、通讯录、短信等编码并生成二维码，很实用的二维码生成工具</p>
+<h3 id="Tracker_uFF08Javascript_u55C5_u63A2_u5668_uFF09"><a href="#Tracker_uFF08Javascript_u55C5_u63A2_u5668_uFF09" class="headerlink" title="Tracker（Javascript嗅探器）"></a>Tracker（Javascript嗅探器）</h3><p>协助您了解目标网页中 JavaScript 的运行情况，包括：执行覆盖率、执行行数、是否存在执行或语法错误等信息Tracker官网</p>
+<h3 id="u65F6_u95F4_uFF08_u6233_uFF09_u8F6C_u6362_u5DE5_u5177"><a href="#u65F6_u95F4_uFF08_u6233_uFF09_u8F6C_u6362_u5DE5_u5177" class="headerlink" title="时间（戳）转换工具"></a>时间（戳）转换工具</h3><p>支持任意时间到对应时间戳的转换；支持任意时间戳到对应日期的转换</p>
+<h3 id="u6B63_u5219_u8868_u8FBE_u5F0F_u5DE5_u5177"><a href="#u6B63_u5219_u8868_u8FBE_u5F0F_u5DE5_u5177" class="headerlink" title="正则表达式工具"></a>正则表达式工具</h3><p>提供一个正则表达式的及时测试工具，并能将匹配结果进行高亮显示、高亮定位等；同时还罗列了一些常用的正则表达式供开发者使用</p>
+<h3 id="u7F16_u7801_u89C4_u8303_u68C0_u6D4B"><a href="#u7F16_u7801_u89C4_u8303_u68C0_u6D4B" class="headerlink" title="编码规范检测"></a>编码规范检测</h3><p>对当前网页进行Javascript、CSS、HTML编码规范的检测，包括文件是否压缩、标签是否正确闭合、cookie管理等等</p>
+<h3 id="u9875_u9762_u6027_u80FD_u68C0_u6D4B"><a href="#u9875_u9762_u6027_u80FD_u68C0_u6D4B" class="headerlink" title="页面性能检测"></a>页面性能检测</h3><p>对当前页面的性能进行检测，如HTTP响应时间、页面渲染时间、是否启用gzip压缩等等</p>
+<h3 id="u6805_u683C_u89C4_u8303_u68C0_u6D4B"><a href="#u6805_u683C_u89C4_u8303_u68C0_u6D4B" class="headerlink" title="栅格规范检测"></a>栅格规范检测</h3><p>如果您的页面是基于栅格系统而开发的（如960gs），这个简单的工具能很好的帮助您分析栅格对齐是否规范</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/frontend/">frontend</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Farman
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
