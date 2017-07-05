@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Daugther brithday</title>
+</head>
+<body>
+  <p style="color:#ccc">出生日期: 2017-03-27 17:17:00</p>
+  <p id="live"></p>
+  <script type="text/javascript">
+    var birthday = new Date("2017/03/27 17:17:00").getTime();
+    var liveDom = document.getElementById("live");
+    function runlife(){
+      var now = Date.now();
+      var live = ((now - birthday) / 1000) | 0;
+      var year = (live / (365 * 24 * 60 * 60)) | 0
+          live = live - year * (365 * 24 * 60 * 60);
+
+      var day = (live / (24 * 60 * 60) ) | 0
+          live = live - day * (24 * 60 * 60);
+
+      var hour = (live / (60 * 60)) | 0;
+          live = live - hour * (60 * 60);
+
+      var minate = (live / 60 ) | 0
+          live = live - minate * 60;
+
+      var sec = live;
+
+      var timeYear = year >= 1 ? (year + "年") : ""
+      var timeDay = day > 0 ? (day + "天") : ""
+      var timeHour = hour + "小时"
+      var timeMinate = minate + "分钟"
+      var timeSec = sec > 0 ? (sec + "秒") : ''
+
+      liveDom.textContent = "出生到现在：" + timeYear + timeDay + timeHour + timeMinate + timeSec;
+    }
+    setInterval(runlife, 500)
+  </script>
+</body>
+</html>
